@@ -1,12 +1,12 @@
 /**
- ******************************************************************************************************************
- * @file    ext_globales.h
- * @author  IUT Informatique La Rochelle
- * @version v1.1
- * @date    2021
- * @modification	rien pour le moment
- * @brief   dï¿½clarations des variables globales
- ******************************************************************************************************************/
+  ******************************************************************************************************************
+  * @file    ext_globales.h 
+  * @author  IUT Informatique La Rochelle
+  * @version v1.1
+  * @date    2021
+  * @modification	rien pour le moment
+  * @brief   déclarations des variables globales
+  ******************************************************************************************************************/
 
 #ifndef __EXT_GLOBALES_H
 #define __EXT_GLOBALES_H
@@ -15,6 +15,8 @@
 extern GLCD_FONT GLCD_Font_6x8;
 extern GLCD_FONT GLCD_Font_16x24;
 
-extern volatile int lAbscisse;
+
+extern volatile int xBoule;
+extern volatile int yBoule;
 
 #endif
