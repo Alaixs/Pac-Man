@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Component Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'testLCD' 
+ * Project: 'Paque-manne.uvprojx' 
  * Target:  'Target 1' 
  */
 
