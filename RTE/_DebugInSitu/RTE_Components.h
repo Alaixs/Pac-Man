@@ -3,8 +3,8 @@
  * Auto generated Run-Time-Environment Component Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'testLCD' 
- * Target:  'Target 1' 
+ * Project: 'TP3ex1' 
+ * Target:  'DebugInSitu' 
  */
 
 #ifndef RTE_COMPONENTS_H

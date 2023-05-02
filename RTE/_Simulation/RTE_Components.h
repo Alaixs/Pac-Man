@@ -4,7 +4,7 @@
  *      *** Do not modify ! ***
  *
  * Project: 'testLCD' 
- * Target:  'Target 1' 
+ * Target:  'Simulation' 
  */
 
 #ifndef RTE_COMPONENTS_H
