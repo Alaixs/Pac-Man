@@ -14,6 +14,14 @@
 #include "homescreen.h"
 
 
+#define JOY_DOWN	3
+#define JOY_UP	15
+#define JOY_RIGHT	13
+#define JOY_LEFT	14
+#define JOY_SELECT	7
+	
+#define APPUYE 0x0000
+
 /*----------------------------------------------------------------------------
   Main Program
  *----------------------------------------------------------------------------*/
