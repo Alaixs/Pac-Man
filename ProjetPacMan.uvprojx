@@ -10,7 +10,7 @@
       <TargetName>PacMAN</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060528::V5.06 update 5 (build 528)::ARMCC</pCCUsed>
+      <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -324,6 +324,7 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>0</uC99>
+            <uGnu>0</uGnu>
             <useXO>0</useXO>
             <v6Lang>3</v6Lang>
             <v6LangP>3</v6LangP>
@@ -336,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\Headers\GAME;.\Headers\HARD;.\Lib</IncludePath>
+              <IncludePath>.\Headers\GAME;.\Headers\HARD;.\Lib;.\Headers</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -390,6 +391,21 @@
               <FileType>1</FileType>
               <FilePath>.\Sources\HARD\GLCD.c</FilePath>
             </File>
+            <File>
+              <FileName>boule.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sources\boule.c</FilePath>
+            </File>
+            <File>
+              <FileName>timers.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sources\timers.c</FilePath>
+            </File>
+            <File>
+              <FileName>fantome.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sources\fantome.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -399,6 +415,31 @@
               <FileName>GLCD.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Headers\HARD\GLCD.h</FilePath>
+            </File>
+            <File>
+              <FileName>boule.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Headers\boule.h</FilePath>
+            </File>
+            <File>
+              <FileName>ext_globales.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Headers\ext_globales.h</FilePath>
+            </File>
+            <File>
+              <FileName>globales.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Headers\globales.h</FilePath>
+            </File>
+            <File>
+              <FileName>fantome.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Headers\fantome.h</FilePath>
+            </File>
+            <File>
+              <FileName>timers.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Headers\timers.h</FilePath>
             </File>
           </Files>
         </Group>
