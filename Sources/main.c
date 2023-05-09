@@ -43,7 +43,11 @@ int main (void){
 	
 	while(1)
 	{		
-
+		  joySelect = GPIOG->IDR & (1<<JOY_SELECT);
+		  joyDown = GPIOD->IDR & (1<<JOY_DOWN);
+		  joyUp = GPIOG->IDR & (1<<JOY_UP);
+		  joyLeft = GPIOG->IDR & (1<<JOY_LEFT);    
+		  joyRight = GPIOG->IDR & (1<<JOY_RIGHT);
 		
 	}
 }
