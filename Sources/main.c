@@ -42,12 +42,6 @@ int main (void){
 	initGLCD();
 
   //affichage de l'�cran d'accueil
-
-	
-		GLCD_DrawBitmap ( 100, 100 ,
-						 LARGEUR_HOMESCREEN , HAUTEUR_HOMESCREEN,
-						 (unsigned char *) bmpHomescreen);
-	
 	
 	while(1)
 	{		
@@ -57,6 +51,7 @@ int main (void){
 		  joyLeft = GPIOG->IDR & (1<<JOY_LEFT);    
 		  joyRight = GPIOG->IDR & (1<<JOY_RIGHT);
 		
+			
 	}
 }
 
