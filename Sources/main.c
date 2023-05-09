@@ -12,6 +12,7 @@
 #include "GLCD_Config.h"
 #include "ext_globales.h"
 #include "homescreen.h"
+#include "boule.h"
 
 
 #define JOY_DOWN	3
@@ -40,6 +41,10 @@ int main (void){
 	
 	//initalisation du LCD
 	initGLCD();
+	
+			GLCD_DrawBitmap(170,200,
+									LARGEUR_BOULE, HAUTEUR_BOULE,
+									(const unsigned char *)bmpBoule);
 	
 
   //affichage de l'�cran d'accueil
