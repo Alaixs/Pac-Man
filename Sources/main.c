@@ -40,6 +40,24 @@ int main (void){
 	
 	//initalisation du LCD
 	initGLCD();
+	
+
+  //affichage de l'�cran d'accueil
+
+	GLCD_SetBackgroundColor(GLCD_COLOR_WHITE);
+	GLCD_SetFont(&GLCD_Font_16x24);
+	GLCD_DrawChar(125,100,'P');
+	GLCD_SetBackgroundColor(GLCD_COLOR_WHITE);
+	GLCD_DrawChar(138,100,'A');
+	GLCD_SetBackgroundColor(GLCD_COLOR_WHITE);
+	GLCD_DrawChar(155,100,'C');
+	GLCD_SetBackgroundColor(GLCD_COLOR_WHITE);
+	GLCD_DrawChar(170,100,'M');
+	GLCD_SetBackgroundColor(GLCD_COLOR_WHITE);
+	GLCD_DrawChar(185,100,'A');
+	GLCD_SetBackgroundColor(GLCD_COLOR_WHITE);
+	GLCD_DrawChar(200,100,'N');
+	GLCD_SetBackgroundColor(GLCD_COLOR_WHITE);
 
   //affichage de l'�cran d'accueil
 	
