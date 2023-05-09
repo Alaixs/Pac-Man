@@ -10,13 +10,13 @@
       <TargetName>PacMAN</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060528::V5.06 update 5 (build 528)::ARMCC</pCCUsed>
+      <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>STM32F103ZG</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32F1xx_DFP.2.2.0</PackID>
+          <PackID>Keil.STM32F1xx_DFP.2.4.0</PackID>
           <PackURL>http://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20000000,0x00018000) IROM(0x08000000,0x00100000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -324,6 +324,7 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>0</uC99>
+            <uGnu>0</uGnu>
             <useXO>0</useXO>
             <v6Lang>3</v6Lang>
             <v6LangP>3</v6LangP>
@@ -336,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\Headers\GAME;.\Headers\HARD;.\Lib</IncludePath>
+              <IncludePath>.\h</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -386,9 +387,34 @@
               <FilePath>.\Sources\main.c</FilePath>
             </File>
             <File>
+              <FileName>homescreen.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sources\homescreen.c</FilePath>
+            </File>
+            <File>
+              <FileName>fantome.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sources\fantome.c</FilePath>
+            </File>
+            <File>
+              <FileName>boule.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sources\boule.c</FilePath>
+            </File>
+            <File>
               <FileName>GLCD.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Sources\HARD\GLCD.c</FilePath>
+              <FilePath>.\Sources\GLCD.c</FilePath>
+            </File>
+            <File>
+              <FileName>GLCD_Fonts.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sources\GLCD_Fonts.c</FilePath>
+            </File>
+            <File>
+              <FileName>GLCD_MCBSTM32E.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sources\GLCD_MCBSTM32E.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -396,9 +422,54 @@
           <GroupName>Headers</GroupName>
           <Files>
             <File>
+              <FileName>homescreen.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\h\homescreen.h</FilePath>
+            </File>
+            <File>
+              <FileName>boule.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\h\boule.h</FilePath>
+            </File>
+            <File>
+              <FileName>ext_globales.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\h\ext_globales.h</FilePath>
+            </File>
+            <File>
+              <FileName>fantome.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\h\fantome.h</FilePath>
+            </File>
+            <File>
+              <FileName>globales.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\h\globales.h</FilePath>
+            </File>
+            <File>
+              <FileName>Board_GLCD.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\h\Board_GLCD.h</FilePath>
+            </File>
+            <File>
+              <FileName>Font_6x8_h.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\h\Font_6x8_h.h</FilePath>
+            </File>
+            <File>
+              <FileName>Font_16x24_h.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\h\Font_16x24_h.h</FilePath>
+            </File>
+            <File>
+              <FileName>GLCD_Config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\h\GLCD_Config.h</FilePath>
+            </File>
+            <File>
               <FileName>GLCD.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Headers\HARD\GLCD.h</FilePath>
+              <FilePath>.\h\GLCD.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -407,28 +478,6 @@
         </Group>
         <Group>
           <GroupName>Lib</GroupName>
-          <Files>
-            <File>
-              <FileName>Board_GLCD.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Lib\Board_GLCD.h</FilePath>
-            </File>
-            <File>
-              <FileName>GLCD_Config.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Lib\GLCD_Config.h</FilePath>
-            </File>
-            <File>
-              <FileName>GLCD_Fonts.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Lib\GLCD_Fonts.c</FilePath>
-            </File>
-            <File>
-              <FileName>GLCD_MCBSTM32E.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Lib\GLCD_MCBSTM32E.c</FilePath>
-            </File>
-          </Files>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>
@@ -478,7 +527,7 @@
       <file attr="config" category="header" name="RTE_Driver\Config\RTE_Device.h" version="1.1.2">
         <instance index="0">RTE\Device\STM32F103ZG\RTE_Device.h</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.0" condition="STM32F1xx CMSIS"/>
-        <package name="STM32F1xx_DFP" schemaVersion="1.4.0" url="http://www.keil.com/pack/" vendor="Keil" version="2.2.0"/>
+        <package name="STM32F1xx_DFP" schemaVersion="1.7.2" url="http://www.keil.com/pack/" vendor="Keil" version="2.4.0"/>
         <targetInfos>
           <targetInfo name="PacMAN"/>
         </targetInfos>
@@ -486,15 +535,15 @@
       <file attr="config" category="source" condition="STM32F1xx XL ARMCC" name="Device\Source\ARM\startup_stm32f10x_xl.s" version="1.0.0">
         <instance index="0">RTE\Device\STM32F103ZG\startup_stm32f10x_xl.s</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.0" condition="STM32F1xx CMSIS"/>
-        <package name="STM32F1xx_DFP" schemaVersion="1.4.0" url="http://www.keil.com/pack/" vendor="Keil" version="2.2.0"/>
+        <package name="STM32F1xx_DFP" schemaVersion="1.7.2" url="http://www.keil.com/pack/" vendor="Keil" version="2.4.0"/>
         <targetInfos>
           <targetInfo name="PacMAN"/>
         </targetInfos>
       </file>
       <file attr="config" category="source" name="Device\StdPeriph_Driver\templates\stm32f10x_conf.h" version="3.5.0">
         <instance index="0">RTE\Device\STM32F103ZG\stm32f10x_conf.h</instance>
-        <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="Framework" Cvendor="Keil" Cversion="3.5.1" condition="STM32F1xx STDPERIPH"/>
-        <package name="STM32F1xx_DFP" schemaVersion="1.4.0" url="http://www.keil.com/pack/" vendor="Keil" version="2.2.0"/>
+        <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="Framework" Cvendor="Keil" Cversion="3.6.0" condition="STM32F1xx STDPERIPH"/>
+        <package name="STM32F1xx_DFP" schemaVersion="1.7.2" url="http://www.keil.com/pack/" vendor="Keil" version="2.4.0"/>
         <targetInfos>
           <targetInfo name="PacMAN"/>
         </targetInfos>
@@ -502,7 +551,7 @@
       <file attr="config" category="source" name="Device\Source\system_stm32f10x.c" version="1.0.0">
         <instance index="0">RTE\Device\STM32F103ZG\system_stm32f10x.c</instance>
         <component Cclass="Device" Cgroup="Startup" Cvendor="Keil" Cversion="1.0.0" condition="STM32F1xx CMSIS"/>
-        <package name="STM32F1xx_DFP" schemaVersion="1.4.0" url="http://www.keil.com/pack/" vendor="Keil" version="2.2.0"/>
+        <package name="STM32F1xx_DFP" schemaVersion="1.7.2" url="http://www.keil.com/pack/" vendor="Keil" version="2.4.0"/>
         <targetInfos>
           <targetInfo name="PacMAN"/>
         </targetInfos>

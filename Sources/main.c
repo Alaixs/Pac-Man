@@ -9,6 +9,9 @@
   ******************************************************************************************************************/
 
 #include "GLCD.h"
+#include "GLCD_Config.h"
+#include "ext_globales.h"
+#include "homescreen.h"
 
 
 /*----------------------------------------------------------------------------
@@ -18,10 +21,18 @@ int main(void){
 	
 	//initalisation du LCD
 	initGLCD();
+
+  //affichage de l'�cran d'accueil
+
+	
+		GLCD_DrawBitmap ( 100, 100 ,
+						 LARGEUR_HOMESCREEN , HAUTEUR_HOMESCREEN,
+						 (unsigned char *) bmpHomescreen);
 	
 	
 	while(1)
 	{		
+
 		
 	}
 }
