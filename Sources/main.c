@@ -60,16 +60,19 @@ int main (void){
 	GLCD_SetBackgroundColor(GLCD_COLOR_WHITE);
 
   //affichage de l'�cran d'accueil
-	
-	while(1)
+
+	while(1) // menu
 	{		
 		  joySelect = GPIOG->IDR & (1<<JOY_SELECT);
 		  joyDown = GPIOD->IDR & (1<<JOY_DOWN);
 		  joyUp = GPIOG->IDR & (1<<JOY_UP);
 		  joyLeft = GPIOG->IDR & (1<<JOY_LEFT);    
 		  joyRight = GPIOG->IDR & (1<<JOY_RIGHT);
-		
-			
+			if (joySelect == APPUYE)
+      {
+        clearScreenGLCD();
+        break;
+      }
 	}
 }
 
