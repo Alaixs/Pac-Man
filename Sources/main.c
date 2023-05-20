@@ -13,27 +13,22 @@
 #include "ext_globales.h"
 #include "homescreen.h"
 #include "boule.h"
-
-
-#define JOY_DOWN	3
-#define JOY_UP	15
-#define JOY_RIGHT	13
-#define JOY_LEFT	14
-#define JOY_SELECT	7
-	
-#define APPUYE 0x0000
+#include "timers.h"
 
 /*----------------------------------------------------------------------------
   Main Program
  *----------------------------------------------------------------------------*/
-unsigned long joySelect;
-unsigned long joyDown;
-unsigned long joyUp;
-unsigned long joyRight;
-unsigned long joyLeft;
 
 void Enable_GPIO(void);
 void Init_GPIO(void);
+
+// Initialisation des variables externes
+int xBoule = 0;
+int yBoule = 0;
+int menu = 1;
+int oldXBoule;
+int oldYBoule;
+
 
 int main (void){
 	Enable_GPIO(); // Mise en service des ports
@@ -41,12 +36,15 @@ int main (void){
 	
 	//initalisation du LCD
 	initGLCD();
-	
-			GLCD_DrawBitmap(170,200,
+	GLCD_DrawBitmap(170,200,
 									LARGEUR_BOULE, HAUTEUR_BOULE,
 									(const unsigned char *)bmpBoule);
 	
-
+	
+	//lancement du timer
+	cfgTimer1();
+	
+	
   //affichage de l'�cran d'accueil
 
 	GLCD_SetBackgroundColor(GLCD_COLOR_WHITE);
@@ -65,22 +63,19 @@ int main (void){
 	GLCD_SetBackgroundColor(GLCD_COLOR_WHITE);
 
   //affichage de l'�cran d'accueil
-
-	while(1) // menu
-	{		
-		  joySelect = GPIOG->IDR & (1<<JOY_SELECT);
-		  joyDown = GPIOD->IDR & (1<<JOY_DOWN);
-		  joyUp = GPIOG->IDR & (1<<JOY_UP);
-		  joyLeft = GPIOG->IDR & (1<<JOY_LEFT);    
-		  joyRight = GPIOG->IDR & (1<<JOY_RIGHT);
-			if (joySelect == APPUYE)
-      {
-        clearScreenGLCD();
-        break;
-      }
+	while (1)// boucle de jeu
+	{
+		while(!menu) // boucle d'affichage en jeu
+		{
+			GLCD_DrawBitmap(xBoule,yBoule,
+											LARGEUR_BOULE, HAUTEUR_BOULE,
+											(const unsigned char *)bmpBoule);
+			GLCD_DrawBitmap(oldXBoule,oldYBoule,
+											LARGEUR_BOULE, HAUTEUR_BOULE,
+											(const unsigned char *)bmpEraseBoule);
+		}
 	}
 }
-
                
 void Enable_GPIO(void){
 	RCC->APB2ENR |= (1 << 3); // Enable GPIOB clock
