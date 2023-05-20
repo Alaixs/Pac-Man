@@ -12,11 +12,15 @@
 #define __EXT_GLOBALES_H
 
 #include "Board_GLCD.h"
+
 extern GLCD_FONT GLCD_Font_6x8;
 extern GLCD_FONT GLCD_Font_16x24;
 
 
-extern volatile int xBoule;
-extern volatile int yBoule;
+extern int xBoule;
+extern int yBoule;
+extern int menu;
+extern int oldYBoule;
+extern int oldXBoule;
 
 #endif
