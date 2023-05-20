@@ -11,7 +11,10 @@
 #ifndef __GLOBALES_H
 #define __GLOBALES_H
 
-volatile int xBoule;
-volatile int yBoule;
+int xBoule;
+int yBoule;
+int menu;
+int oldYBoule;
+int oldXBoule;
 
 #endif
