@@ -68,9 +68,6 @@ yPowerUp = rand()%(GLCD_HEIGHT-HAUTEUR_BOULE);
 	
 while (1) 
 	{
-		GLCD_DrawBitmap(oldXBoule, oldYBoule,
-		LARGEUR_BOULE, HAUTEUR_BOULE,
-		(const unsigned char*)bmpEraseBoule);
 		
 		GLCD_DrawBitmap(xBoule, yBoule,
 		LARGEUR_BOULE, HAUTEUR_BOULE,
