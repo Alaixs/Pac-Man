@@ -55,7 +55,7 @@ int refreshMenu()
 		displayMenu(menuSelected);
 	}
 	
-	return joytickSelectPressed() && menuSelected==JOUER;
+	return userButtonPressed() && menuSelected==JOUER;
 }
 
 

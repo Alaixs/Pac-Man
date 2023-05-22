@@ -25,11 +25,11 @@ void Init_GPIO(void);
 /*----------------------------------------------------------------------------
 Global variables
 ----------------------------------------------------------------------------*/
-int xBoule = 200;
-int yBoule = 200;
+int xBoule = GLCD_SIZE_X/2;
+int yBoule = GLCD_SIZE_Y/2;
 int menu = 1;
-int oldXBoule;
-int oldYBoule;
+int oldXBoule=0;
+int oldYBoule=0;
 char dir;
 
 /*----------------------------------------------------------------------------
@@ -47,54 +47,23 @@ displayMenu(JOUER);
 while (!refreshMenu());
 
 // Configure and start the timer
-//cfgTimer1();
-	
+cfgTimer1();
 clearScreenGLCD();
 
-while (1) {
-
-	if (joytickRightPressed())
-  {
-		GLCD_DrawBitmap(xBoule, yBoule,
+while (1) 
+	{
+		GLCD_DrawBitmap(oldXBoule, oldYBoule,
 		LARGEUR_BOULE, HAUTEUR_BOULE,
 		(const unsigned char*)bmpEraseBoule);
-    xBoule++;
+		
 		GLCD_DrawBitmap(xBoule, yBoule,
 		LARGEUR_BOULE, HAUTEUR_BOULE,
 		(const unsigned char*)bmpBoule);
-  }
-  if (joytickLeftPressed())
-  {
-		GLCD_DrawBitmap(xBoule, yBoule,
+		
+		GLCD_DrawBitmap(200, 200,
 		LARGEUR_BOULE, HAUTEUR_BOULE,
-		(const unsigned char*)bmpEraseBoule);
-    xBoule--;
-		GLCD_DrawBitmap(xBoule, yBoule,
-		LARGEUR_BOULE, HAUTEUR_BOULE,
-		(const unsigned char*)bmpBoule);
-  }
-  if (joytickUpPressed())
-  {
-		GLCD_DrawBitmap(xBoule, yBoule,
-		LARGEUR_BOULE, HAUTEUR_BOULE,
-		(const unsigned char*)bmpEraseBoule);
-    yBoule--;
-		GLCD_DrawBitmap(xBoule, yBoule,
-		LARGEUR_BOULE, HAUTEUR_BOULE,
-		(const unsigned char*)bmpBoule);
-  }
-  if (joytickDownPressed())
-  {
-		GLCD_DrawBitmap(xBoule, yBoule,
-		LARGEUR_BOULE, HAUTEUR_BOULE,
-		(const unsigned char*)bmpEraseBoule);
-    yBoule++;
-		GLCD_DrawBitmap(xBoule, yBoule,
-		LARGEUR_BOULE, HAUTEUR_BOULE,
-		(const unsigned char*)bmpBoule);
-  }
-
-}
+		(const unsigned char*)bmpPowerUp);
+	}
 }
 
 
