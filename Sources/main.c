@@ -14,7 +14,10 @@
 #include "boule.h"
 #include "timers.h"
 #include "menu.h"
+#include "fantome.h"
 #include "GPIO.h"
+#include <time.h>
+#include <stdlib.h>
 
 /*----------------------------------------------------------------------------
 Function prototypes
@@ -25,12 +28,16 @@ void Init_GPIO(void);
 /*----------------------------------------------------------------------------
 Global variables
 ----------------------------------------------------------------------------*/
-int xBoule = GLCD_SIZE_X/2;
-int yBoule = GLCD_SIZE_Y/2;
+int xBoule = 0;
+int yBoule = 0;
 int menu = 1;
 int oldXBoule=0;
 int oldYBoule=0;
-char dir;
+bool alreadyGenerate = false;
+int xGhost1;
+int yGhost1;
+int xPowerUp;
+int yPowerUp;
 
 /*----------------------------------------------------------------------------
 Main program
@@ -38,10 +45,13 @@ Main program
 int main(void) {
 Enable_GPIO(); // Enable GPIO ports
 Init_GPIO(); // Initialize GPIO ports
-
+	
+// Initialize random engine
+//srand(time(NULL)); 
+	
 // Initialize the LCD
 initGLCD();
-
+	
 // Display the home screen menu
 displayMenu(JOUER);
 while (!refreshMenu());
@@ -50,6 +60,12 @@ while (!refreshMenu());
 cfgTimer1();
 clearScreenGLCD();
 
+xGhost1 = rand()%(GLCD_WIDTH-LARGEUR_BOULE);
+yGhost1 = rand()%(GLCD_HEIGHT-HAUTEUR_BOULE);
+	
+xPowerUp = rand()%(GLCD_WIDTH-LARGEUR_BOULE);
+yPowerUp = rand()%(GLCD_HEIGHT-HAUTEUR_BOULE);
+	
 while (1) 
 	{
 		GLCD_DrawBitmap(oldXBoule, oldYBoule,
@@ -60,9 +76,18 @@ while (1)
 		LARGEUR_BOULE, HAUTEUR_BOULE,
 		(const unsigned char*)bmpBoule);
 		
-		GLCD_DrawBitmap(200, 200,
+		GLCD_DrawBitmap(xGhost1, yGhost1,
 		LARGEUR_BOULE, HAUTEUR_BOULE,
-		(const unsigned char*)bmpPowerUp);
+		(const unsigned char*)bmpfantomepacmanpng);
+		
+		if (rand()%2 && !alreadyGenerate)
+		{
+			GLCD_DrawBitmap(rand()%31*10, rand()%23*10,
+			LARGEUR_BOULE, HAUTEUR_BOULE,
+			(const unsigned char*)bmpPowerUp);
+			
+			alreadyGenerate = true;
+		}
 	}
 }
 

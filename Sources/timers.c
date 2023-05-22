@@ -15,6 +15,7 @@
 #include "ext_globales.h"
 #include "timers.h"
 #include "GPIO.h"
+#include <stdlib.h>
 
 #define SETENA0 *(volatile unsigned long *)0xE000E100
 #define TIM1_UP_IRQChannel (1<<25)
@@ -37,7 +38,7 @@ void cfgTimer1(void)
 {
 	RCC->APB2ENR |= (1 << 11);
 	TIM1->PSC = 450;
-	TIM1->ARR = 10000;
+	TIM1->ARR = 1000;
 	TIM1->DIER |= UIE;
 	TIM1->CR1 |= 0x0001;
 	SETENA0 |= TIM1_UP_IRQChannel;
@@ -75,11 +76,11 @@ void TIM1_UP_TIM10_IRQHandler (void)
 		// Modification des coordonnées en fonction de la direction selectionnée
 		if (direction == 'D')
 		{
-			if (yBoule < GLCD_HEIGHT-10)
+			if (yBoule < GLCD_HEIGHT-HAUTEUR_BOULE)
 			{
 				oldYBoule = yBoule;
 				oldXBoule = xBoule;
-				yBoule += HAUTEUR_BOULE;
+				yBoule += 1;
 			}
 		}
 		else if (direction == 'U')
@@ -88,7 +89,7 @@ void TIM1_UP_TIM10_IRQHandler (void)
 			{
 				oldYBoule = yBoule;
 				oldXBoule = xBoule;
-				yBoule -= HAUTEUR_BOULE;
+				yBoule -= 1;
 			}
 		}
 		else if (direction == 'L')
@@ -97,16 +98,16 @@ void TIM1_UP_TIM10_IRQHandler (void)
 			{
 				oldYBoule = yBoule;
 				oldXBoule = xBoule;
-				xBoule -= LARGEUR_BOULE;
+				xBoule -= 1;
 			}
 		}
 		else if (direction == 'R')
 		{
-			if (xBoule < GLCD_WIDTH-10)
+			if (xBoule < GLCD_WIDTH-LARGEUR_BOULE)
 			{
 				oldYBoule = yBoule;
 				oldXBoule = xBoule;
-				xBoule += LARGEUR_BOULE;
+				xBoule += 1;
 			}
 		}
 	}

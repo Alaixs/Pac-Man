@@ -22,5 +22,11 @@ extern int yBoule;
 extern int menu;
 extern int oldYBoule;
 extern int oldXBoule;
+extern int xGhost1;
+extern int yGhost1;
+extern int oldXGhost1;
+extern int oldYGhost1;
+extern int xPowerUp;
+extern int yPowerUp;
 
 #endif

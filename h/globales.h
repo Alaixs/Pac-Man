@@ -16,5 +16,11 @@ int yBoule;
 int menu;
 int oldYBoule;
 int oldXBoule;
+int xGhost1;
+int yGhost1;
+int oldXGhost1;
+int oldYGhost1;
+int xPowerUp;
+int yPowerUp;
 
 #endif
