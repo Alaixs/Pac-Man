@@ -16,6 +16,6 @@ typedef enum {JOUER, QUITTER} MenuSelected;
 void displayMenu(MenuSelected menuSelected);
 void displayLogo(void);
 int refreshMenu(void);
-
+void displayGameLosed(void);
 
 #endif
