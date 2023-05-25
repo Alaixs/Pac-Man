@@ -30,5 +30,7 @@ extern int xPowerUp;
 extern int yPowerUp;
 extern int isAlreadyGenerate;
 extern int isEated;
+extern char direction;
+extern int status;
 
 #endif
