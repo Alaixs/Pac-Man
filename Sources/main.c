@@ -29,8 +29,8 @@ void Init_GPIO(void);
 /*----------------------------------------------------------------------------
 Global variables
 ----------------------------------------------------------------------------*/
-int xBoule;
-int yBoule;
+int xBoule = GLCD_WIDTH/2;
+int yBoule = GLCD_HEIGHT/2;
 int menu = 1;
 int oldXBoule=0;
 int oldYBoule=0;
@@ -41,6 +41,10 @@ int yPowerUp;
 int isAlreadyGenerate = false;
 int isEated = false;
 
+
+/*----------------------------------------------------------------------------
+Local variables
+----------------------------------------------------------------------------*/
 int points = 0;
 char score[12];
 
@@ -65,9 +69,6 @@ while (!refreshMenu());
 // Configure and start the timer
 cfgTimer1();
 clearScreenGLCD();
-
-xBoule = rand()%(GLCD_WIDTH-LARGEUR_BOULE);
-yBoule = rand()%(GLCD_HEIGHT-HAUTEUR_BOULE);
 	
 xGhost1 = rand()%(GLCD_WIDTH-LARGEUR_BOULE);
 yGhost1 = rand()%(GLCD_HEIGHT-HAUTEUR_BOULE);
