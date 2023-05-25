@@ -113,7 +113,7 @@ while (1)
 		}
 		
 		sprintf(score, "%d", points);	
-		GLCD_DrawString  (0, 100,score);
+		GLCD_DrawString  (100, 0,score);
 		
 		
 		
