@@ -116,6 +116,14 @@ void TIM1_UP_TIM10_IRQHandler (void)
 		{
 			isEated = true;
 		}
+		
+		if ((xGhost1 <= xBoule+LARGEUR_BOULE && xBoule <= xGhost1+LARGEUR_BOULE && yGhost1 <= yBoule+HAUTEUR_BOULE && yGhost1 <= yPowerUp+HAUTEUR_BOULE) && 
+				(xGhost2 <= xBoule+LARGEUR_BOULE && xBoule <= xGhost2+LARGEUR_BOULE && yGhost2 <= yBoule+HAUTEUR_BOULE && yGhost2 <= yPowerUp+HAUTEUR_BOULE) && 
+				(xGhost3 <= xBoule+LARGEUR_BOULE && xBoule <= xGhost3+LARGEUR_BOULE && yGhost3 <= yBoule+HAUTEUR_BOULE && yGhost3 <= yPowerUp+HAUTEUR_BOULE) && 
+				(xGhost4 <= xBoule+LARGEUR_BOULE && xBoule <= xGhost4+LARGEUR_BOULE && yGhost4 <= yBoule+HAUTEUR_BOULE && yGhost4 <= yPowerUp+HAUTEUR_BOULE))
+		{
+			isTheEnd = true;
+		}
 	}
 }
 
