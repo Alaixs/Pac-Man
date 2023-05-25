@@ -24,5 +24,7 @@ int xPowerUp;
 int yPowerUp;
 int isAlreadyGenerate;
 int isEated;
+char direction;
+int status;
 
 #endif
