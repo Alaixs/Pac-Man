@@ -20,17 +20,25 @@ extern GLCD_FONT GLCD_Font_16x24;
 extern int xBoule;
 extern int yBoule;
 extern int menu;
-extern int oldYBoule;
-extern int oldXBoule;
+
 extern int xGhost1;
 extern int yGhost1;
-extern int oldXGhost1;
-extern int oldYGhost1;
+
+extern int xGhost2;
+extern int yGhost2;
+
+extern int xGhost3;
+extern int yGhost3;
+
+extern int xGhost4;
+extern int yGhost4;
+
 extern int xPowerUp;
 extern int yPowerUp;
-extern int isAlreadyGenerate;
 extern int isEated;
 extern char direction;
 extern int status;
+extern int points;
+extern int isTheEnd;
 
 #endif
