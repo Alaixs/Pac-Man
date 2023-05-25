@@ -123,7 +123,19 @@ while (1)
 		
 		GLCD_DrawBitmap(xGhost1, yGhost1,
 		LARGEUR_BOULE, HAUTEUR_BOULE,
-		(const unsigned char*)bmpfantomepacmanpng);
+		(const unsigned char*)bmpfantomerougepng);
+		
+		GLCD_DrawBitmap(xGhost1, yGhost1,
+		LARGEUR_BOULE, HAUTEUR_BOULE,
+		(const unsigned char*)bmpfantomerougepng);
+		
+		GLCD_DrawBitmap(xGhost1, yGhost1,
+		LARGEUR_BOULE, HAUTEUR_BOULE,
+		(const unsigned char*)bmpfantomerougepng);
+		
+		GLCD_DrawBitmap(xGhost1, yGhost1,
+		LARGEUR_BOULE, HAUTEUR_BOULE,
+		(const unsigned char*)bmpfantomerougepng);
 		
 		if (isEated)
 		{
