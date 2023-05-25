@@ -33,11 +33,12 @@ int yBoule = 0;
 int menu = 1;
 int oldXBoule=0;
 int oldYBoule=0;
-bool alreadyGenerate = false;
 int xGhost1;
 int yGhost1;
 int xPowerUp;
 int yPowerUp;
+int isAlreadyGenerate = false;
+int isEated = false;
 
 /*----------------------------------------------------------------------------
 Main program
@@ -77,13 +78,23 @@ while (1)
 		LARGEUR_BOULE, HAUTEUR_BOULE,
 		(const unsigned char*)bmpfantomepacmanpng);
 		
-		if (rand()%2 && !alreadyGenerate)
+		if (rand()%2 && !isAlreadyGenerate)
 		{
-			GLCD_DrawBitmap(rand()%31*10, rand()%23*10,
+			if (isEated)
+			{
+							GLCD_DrawBitmap(xPowerUp, yPowerUp,
+							LARGEUR_BOULE, HAUTEUR_BOULE,
+							(const unsigned char*)bmpErase);
+			}
+			
+			xPowerUp = rand()%(GLCD_WIDTH-LARGEUR_BOULE);
+			yPowerUp = rand()%(GLCD_HEIGHT-HAUTEUR_BOULE);
+			
+			GLCD_DrawBitmap(xPowerUp, yPowerUp,
 			LARGEUR_BOULE, HAUTEUR_BOULE,
 			(const unsigned char*)bmpPowerUp);
 			
-			alreadyGenerate = true;
+			isAlreadyGenerate = true;
 		}
 	}
 }

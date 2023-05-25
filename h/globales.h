@@ -22,5 +22,7 @@ int oldXGhost1;
 int oldYGhost1;
 int xPowerUp;
 int yPowerUp;
+int isAlreadyGenerate;
+int isEated;
 
 #endif

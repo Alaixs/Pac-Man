@@ -28,5 +28,7 @@ extern int oldXGhost1;
 extern int oldYGhost1;
 extern int xPowerUp;
 extern int yPowerUp;
+extern int isAlreadyGenerate;
+extern int isEated;
 
 #endif

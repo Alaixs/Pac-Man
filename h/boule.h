@@ -16,7 +16,7 @@
 #define LARGEUR_BOULE	16
 
 extern const unsigned short bmpBoule[HAUTEUR_BOULE*LARGEUR_BOULE];
-extern const unsigned short bmpEraseBoule[HAUTEUR_BOULE*LARGEUR_BOULE];
+extern const unsigned short bmpErase[HAUTEUR_BOULE*LARGEUR_BOULE];
 extern const unsigned short bmpPowerUp[HAUTEUR_BOULE*LARGEUR_BOULE];
 
 #endif

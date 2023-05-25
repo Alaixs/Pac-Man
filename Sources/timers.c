@@ -110,6 +110,11 @@ void TIM1_UP_TIM10_IRQHandler (void)
 				xBoule += 1;
 			}
 		}
+		
+		if (xPowerUp <= xBoule+LARGEUR_BOULE && xBoule <= xPowerUp+LARGEUR_BOULE && yPowerUp <= yBoule+HAUTEUR_BOULE && yBoule <= yPowerUp+HAUTEUR_BOULE)
+		{
+			isEated = true;
+		}
 	}
 }
 
