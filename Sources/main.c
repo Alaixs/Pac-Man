@@ -18,6 +18,7 @@
 #include "GPIO.h"
 #include <time.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /*----------------------------------------------------------------------------
 Function prototypes
@@ -39,6 +40,9 @@ int xPowerUp;
 int yPowerUp;
 int isAlreadyGenerate = false;
 int isEated = false;
+
+int points = 0;
+char score[12];
 
 
 /*----------------------------------------------------------------------------
@@ -108,6 +112,8 @@ while (1)
 											(const unsigned char*)bmpBoule);
 		}
 		
+		sprintf(score, "%d", points);	
+		GLCD_DrawString  (0, 100,score);
 		
 		
 		
