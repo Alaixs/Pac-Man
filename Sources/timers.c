@@ -27,6 +27,7 @@ unsigned long joyRight;
 unsigned long joyLeft;
 
 char direction;
+int status;
 
 
 /**
@@ -56,6 +57,14 @@ void TIM1_UP_TIM10_IRQHandler (void)
 		
     TIM1->SR &= ~UIF;
 		// Changement de direction en fonction de la direction du joystick
+		
+		status+=1;
+		
+		if (status <=20)
+		{
+			status=0;
+		}
+		
 		if (joyLeft == APPUYE)
 		{
 			direction = 'L';
