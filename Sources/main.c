@@ -141,12 +141,12 @@ while (1)
 			xPowerUp = rand()%(GLCD_WIDTH-LARGEUR_BOULE);
 			yPowerUp = rand()%(GLCD_HEIGHT-HAUTEUR_BOULE);
 			
-			GLCD_DrawBitmap(xPowerUp, yPowerUp,
-			LARGEUR_BOULE, HAUTEUR_BOULE,
-			(const unsigned char*)bmpPowerUp);
-			
 			isAlreadyGenerate = true;
 		}
+			
+		GLCD_DrawBitmap(xPowerUp, yPowerUp,
+			LARGEUR_BOULE, HAUTEUR_BOULE,
+			(const unsigned char*)bmpPowerUp);
 	}
 }
 
