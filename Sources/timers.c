@@ -39,7 +39,7 @@ void cfgTimer1(void)
 {
 	RCC->APB2ENR |= (1 << 11);
 	TIM1->PSC = 450;
-	TIM1->ARR = 3000;
+	TIM1->ARR = 1000;
 	TIM1->DIER |= UIE;
 	TIM1->CR1 |= 0x0001;
 	SETENA0 |= TIM1_UP_IRQChannel;
@@ -60,7 +60,7 @@ void TIM1_UP_TIM10_IRQHandler (void)
 		
 		status+=1;
 		
-		if (status <=20)
+		if (status >= 20)
 		{
 			status=0;
 		}
