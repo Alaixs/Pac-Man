@@ -40,6 +40,7 @@ int yPowerUp;
 int isAlreadyGenerate = false;
 int isEated = false;
 
+
 /*----------------------------------------------------------------------------
 Main program
 ----------------------------------------------------------------------------*/
@@ -69,10 +70,46 @@ yPowerUp = rand()%(GLCD_HEIGHT-HAUTEUR_BOULE);
 	
 while (1) 
 	{
+		if (status <= 10)
+		{
+			switch(direction)
+			{
+				case 'R':
+					GLCD_DrawBitmap(xBoule, yBoule,
+												LARGEUR_BOULE, HAUTEUR_BOULE,
+												(const unsigned char*)bpmBouleOuverteDroite);
+					break;
+				case 'D':
+					GLCD_DrawBitmap(xBoule, yBoule,
+												LARGEUR_BOULE, HAUTEUR_BOULE,
+												(const unsigned char*)bpmBouleOuverteBas);
+					break;
+				case 'U':
+					GLCD_DrawBitmap(xBoule, yBoule,
+												LARGEUR_BOULE, HAUTEUR_BOULE,
+												(const unsigned char*)bpmBouleOuverteHaut);
+					break;
+				case 'L':
+					GLCD_DrawBitmap(xBoule, yBoule,
+												LARGEUR_BOULE, HAUTEUR_BOULE,
+												(const unsigned char*)bpmBouleOuverteGauche);
+					break;
+				default:
+					GLCD_DrawBitmap(xBoule, yBoule,
+												LARGEUR_BOULE, HAUTEUR_BOULE,
+												(const unsigned char*)bmpBoule);
+					break;
+			}
+		}
+		else 
+		{
+			GLCD_DrawBitmap(xBoule, yBoule,
+											LARGEUR_BOULE, HAUTEUR_BOULE,
+											(const unsigned char*)bmpBoule);
+		}
 		
-		GLCD_DrawBitmap(xBoule, yBoule,
-		LARGEUR_BOULE, HAUTEUR_BOULE,
-		(const unsigned char*)bmpBoule);
+		
+		
 		
 		GLCD_DrawBitmap(xGhost1, yGhost1,
 		LARGEUR_BOULE, HAUTEUR_BOULE,
