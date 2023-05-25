@@ -34,18 +34,29 @@ int yBoule = GLCD_HEIGHT/2;
 int menu = 1;
 int oldXBoule=0;
 int oldYBoule=0;
+
 int xGhost1;
 int yGhost1;
+
+int xGhost2;
+int yGhost2;
+
+int xGhost3;
+int yGhost3;
+
+int xGhost4;
+int yGhost4;
+
 int xPowerUp;
 int yPowerUp;
-int isAlreadyGenerate = false;
 int isEated = false;
+int points = 0;
+int isTheEnd = false;
 
 
 /*----------------------------------------------------------------------------
 Local variables
 ----------------------------------------------------------------------------*/
-int points = 0;
 char score[12];
 
 
@@ -70,13 +81,22 @@ while (!refreshMenu());
 cfgTimer1();
 clearScreenGLCD();
 	
-xGhost1 = rand()%(GLCD_WIDTH-LARGEUR_BOULE);
-yGhost1 = rand()%(GLCD_HEIGHT-HAUTEUR_BOULE);
+xGhost1 = 0;
+yGhost1 = 0;
 	
+xGhost2 = GLCD_WIDTH-LARGEUR_BOULE;
+yGhost2 = 0;
+	
+xGhost3 = GLCD_WIDTH-LARGEUR_BOULE;
+yGhost3 = GLCD_HEIGHT-HAUTEUR_BOULE;
+
+xGhost4 = 0;
+yGhost4 = GLCD_HEIGHT-HAUTEUR_BOULE;
+
 xPowerUp = rand()%(GLCD_WIDTH-LARGEUR_BOULE);
 yPowerUp = rand()%(GLCD_HEIGHT-HAUTEUR_BOULE);
 	
-while (1) 
+while (!isTheEnd) 
 	{
 		if (status <= 10)
 		{
@@ -125,17 +145,17 @@ while (1)
 		LARGEUR_BOULE, HAUTEUR_BOULE,
 		(const unsigned char*)bmpfantomerougepng);
 		
-		GLCD_DrawBitmap(xGhost1, yGhost1,
+		GLCD_DrawBitmap(xGhost2, yGhost2,
 		LARGEUR_BOULE, HAUTEUR_BOULE,
-		(const unsigned char*)bmpfantomerougepng);
+		(const unsigned char*)bmpfantomerosepng);
 		
-		GLCD_DrawBitmap(xGhost1, yGhost1,
+		GLCD_DrawBitmap(xGhost3, yGhost3,
 		LARGEUR_BOULE, HAUTEUR_BOULE,
-		(const unsigned char*)bmpfantomerougepng);
+		(const unsigned char*)bmpfantomebleupng);
 		
-		GLCD_DrawBitmap(xGhost1, yGhost1,
+		GLCD_DrawBitmap(xGhost4, yGhost4,
 		LARGEUR_BOULE, HAUTEUR_BOULE,
-		(const unsigned char*)bmpfantomerougepng);
+		(const unsigned char*)bmpfantomeorangepng);
 		
 		if (isEated)
 		{
@@ -143,7 +163,6 @@ while (1)
 											LARGEUR_BOULE, HAUTEUR_BOULE,
 											(const unsigned char*)bmpErase);
 			points+=10;
-			isAlreadyGenerate = false;
 			isEated = false;
 			
 			xPowerUp = rand()%(GLCD_WIDTH-LARGEUR_BOULE);
@@ -154,6 +173,8 @@ while (1)
 			LARGEUR_BOULE, HAUTEUR_BOULE,
 			(const unsigned char*)bmpPowerUp);
 	}
+	
+	displayGameLosed();
 }
 
 
