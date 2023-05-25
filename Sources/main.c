@@ -126,6 +126,7 @@ while (1)
 			GLCD_DrawBitmap(xPowerUp, yPowerUp,
 											LARGEUR_BOULE, HAUTEUR_BOULE,
 											(const unsigned char*)bmpErase);
+			points+=10;
 			isAlreadyGenerate = false;
 			isEated = false;
 		}
