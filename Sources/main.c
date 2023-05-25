@@ -133,15 +133,9 @@ while (1)
 			points+=10;
 			isAlreadyGenerate = false;
 			isEated = false;
-		}
-		
-		if (rand()%2 && !isAlreadyGenerate)
-		{
 			
 			xPowerUp = rand()%(GLCD_WIDTH-LARGEUR_BOULE);
 			yPowerUp = rand()%(GLCD_HEIGHT-HAUTEUR_BOULE);
-			
-			isAlreadyGenerate = true;
 		}
 			
 		GLCD_DrawBitmap(xPowerUp, yPowerUp,
