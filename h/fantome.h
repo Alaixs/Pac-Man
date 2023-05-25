@@ -12,6 +12,9 @@
 #ifndef __FANTOME_H
 #define __FANTOME_H
 
-extern const unsigned short bmpfantomepacmanpng[16*16];
+extern const unsigned short bmpfantomerougepng[16*16];
+extern const unsigned short bmpfantomeorangepng[16*16];
+extern const unsigned short bmpfantomebleupng[16*16];
+extern const unsigned short bmpfantomerosepng[16*16];
 
 #endif
