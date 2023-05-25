@@ -74,7 +74,7 @@ void displayGameLosed()
     displayLogo();
     
     GLCD_SetForegroundColor(GLCD_COLOR_RED);
-    GLCD_DrawString  (100, 100,"Vous avez perdu");
+    GLCD_DrawString  (20, 100,"Vous avez perdu");
     GLCD_SetForegroundColor(GLCD_COLOR_WHITE);
     sprintf(chaine,"Votre score : %d",points);
     GLCD_DrawString (20, 140, chaine);
