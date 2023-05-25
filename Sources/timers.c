@@ -87,8 +87,6 @@ void TIM1_UP_TIM10_IRQHandler (void)
 		{
 			if (yBoule < GLCD_HEIGHT-HAUTEUR_BOULE)
 			{
-				oldYBoule = yBoule;
-				oldXBoule = xBoule;
 				yBoule += 1;
 			}
 		}
@@ -96,8 +94,6 @@ void TIM1_UP_TIM10_IRQHandler (void)
 		{
 			if (yBoule > 0)
 			{
-				oldYBoule = yBoule;
-				oldXBoule = xBoule;
 				yBoule -= 1;
 			}
 		}
@@ -105,8 +101,6 @@ void TIM1_UP_TIM10_IRQHandler (void)
 		{
 			if (xBoule > 0)
 			{
-				oldYBoule = yBoule;
-				oldXBoule = xBoule;
 				xBoule -= 1;
 			}
 		}
@@ -114,8 +108,6 @@ void TIM1_UP_TIM10_IRQHandler (void)
 		{
 			if (xBoule < GLCD_WIDTH-LARGEUR_BOULE)
 			{
-				oldYBoule = yBoule;
-				oldXBoule = xBoule;
 				xBoule += 1;
 			}
 		}
