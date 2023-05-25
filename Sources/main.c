@@ -29,8 +29,8 @@ void Init_GPIO(void);
 /*----------------------------------------------------------------------------
 Global variables
 ----------------------------------------------------------------------------*/
-int xBoule = 0;
-int yBoule = 0;
+int xBoule;
+int yBoule;
 int menu = 1;
 int oldXBoule=0;
 int oldYBoule=0;
@@ -66,6 +66,9 @@ while (!refreshMenu());
 cfgTimer1();
 clearScreenGLCD();
 
+xBoule = rand()%(GLCD_WIDTH-LARGEUR_BOULE);
+yBoule = rand()%(GLCD_HEIGHT-HAUTEUR_BOULE);
+	
 xGhost1 = rand()%(GLCD_WIDTH-LARGEUR_BOULE);
 yGhost1 = rand()%(GLCD_HEIGHT-HAUTEUR_BOULE);
 	
