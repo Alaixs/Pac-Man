@@ -14,17 +14,25 @@
 int xBoule;
 int yBoule;
 int menu;
-int oldYBoule;
-int oldXBoule;
+
 int xGhost1;
 int yGhost1;
-int oldXGhost1;
-int oldYGhost1;
+
+int xGhost2;
+int yGhost2;
+
+int xGhost3;
+int yGhost3;
+
+int xGhost4;
+int yGhost4;
+
 int xPowerUp;
 int yPowerUp;
-int isAlreadyGenerate;
 int isEated;
 char direction;
 int status;
+int points;
+int isTheEnd;
 
 #endif
