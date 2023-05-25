@@ -78,14 +78,17 @@ while (1)
 		LARGEUR_BOULE, HAUTEUR_BOULE,
 		(const unsigned char*)bmpfantomepacmanpng);
 		
+		if (isEated)
+		{
+			GLCD_DrawBitmap(xPowerUp, yPowerUp,
+											LARGEUR_BOULE, HAUTEUR_BOULE,
+											(const unsigned char*)bmpErase);
+			isAlreadyGenerate = false;
+			isEated = false;
+		}
+		
 		if (rand()%2 && !isAlreadyGenerate)
 		{
-			if (isEated)
-			{
-							GLCD_DrawBitmap(xPowerUp, yPowerUp,
-							LARGEUR_BOULE, HAUTEUR_BOULE,
-							(const unsigned char*)bmpErase);
-			}
 			
 			xPowerUp = rand()%(GLCD_WIDTH-LARGEUR_BOULE);
 			yPowerUp = rand()%(GLCD_HEIGHT-HAUTEUR_BOULE);
