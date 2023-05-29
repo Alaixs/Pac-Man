@@ -46,7 +46,8 @@ int yGhost4;
 
 int xPowerUp;
 int yPowerUp;
-int isEated = false;
+int isEatedByPM = false;
+int isEatedByF = false;
 int points = 0;
 int isTheEnd = false;
 int visibleTime = 60;
@@ -124,10 +125,19 @@ void updateGame(void) {
     //GLCD_DrawBitmap(xGhost3, yGhost3, LARGEUR_BOULE, HAUTEUR_BOULE, (const unsigned char*)bmpfantomebleupng);
     //GLCD_DrawBitmap(xGhost4, yGhost4, LARGEUR_BOULE, HAUTEUR_BOULE, (const unsigned char*)bmpfantomeorangepng);
 
-    if (isEated) {
+    if (isEatedByF || isEatedByPM) {
         GLCD_DrawBitmap(xPowerUp, yPowerUp, LARGEUR_BOULE, HAUTEUR_BOULE, (const unsigned char*)bmpErase);
-        points += 10;
-        isEated = false;
+			
+				if (isEatedByPM)
+				{
+					points += 10;
+					isEatedByPM = false;
+				}
+				else
+				{
+					points -= 10;
+					isEatedByF = false;
+				}
 
         xPowerUp = rand() % (GLCD_WIDTH - LARGEUR_BOULE);
         yPowerUp = rand() % (GLCD_HEIGHT - HAUTEUR_BOULE);
