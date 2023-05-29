@@ -114,73 +114,73 @@ void TIM1_UP_TIM10_IRQHandler(void)
 
 				// modification des coordonnées des fantomes
 				// Move fantome 1
-				if (yGhost1 < xBoule && rand()%2 && yGhost1 < GLCD_WIDTH - LARGEUR_BOULE)
+				if (yGhost1 < yPowerUp)
 				{
 					yGhost1++;
 				}
-				else if (yGhost1 > 0)
+				else if (yGhost1 > yPowerUp)
 				{
 					yGhost1--;
 				}
-				else if (yGhost1 < xBoule && rand()%2 && xGhost1 < GLCD_WIDTH - LARGEUR_BOULE)
+				else if (xGhost1 < xPowerUp)
 				{
 					xGhost1++;
 				}
-				else if (xGhost1 > 0)
+				else if (xGhost1 > xPowerUp)
 				{
 					xGhost1--;
 				}
 				
 				// Move fantome 2
-				if (yGhost2 < xBoule && rand()%2 && yGhost2 < GLCD_WIDTH - LARGEUR_BOULE)
+				if (yGhost2 < yPowerUp)
 				{
 					yGhost2++;
 				}
-				else if (yGhost2 > 0)
+				else if (yGhost2 > yPowerUp)
 				{
 					yGhost2--;
 				}
-				else if (yGhost1 < xBoule && rand()%2 && xGhost2 < GLCD_WIDTH - LARGEUR_BOULE)
+				else if (xGhost2 < xPowerUp)
 				{
 					xGhost2++;
 				}
-				else if (xGhost2 > 0)
+				else if (xGhost2 > xPowerUp)
 				{
 					xGhost2--;
 				}
 				
 				// Move fantome 3
-				if (yGhost3 < xBoule && rand()%2 && yGhost3 < GLCD_WIDTH - LARGEUR_BOULE)
+				if (yGhost3 < yPowerUp)
 				{
 					yGhost3++;
 				}
-				else if (yGhost3 > 0)
+				else if (yGhost3 > yPowerUp)
 				{
 					yGhost3--;
 				}
-				else if (yGhost3 < xBoule && rand()%2 && xGhost3 < GLCD_WIDTH - LARGEUR_BOULE)
+				else if (xGhost3 < xPowerUp)
 				{
 					xGhost3++;
 				}
-				else if (xGhost3 > 0)
+				else if (xGhost3 > xPowerUp)
 				{
 					xGhost3--;
 				}
 				
 				// Move fantome 4
-				if (yGhost4 < xBoule && rand()%2 && yGhost4 < GLCD_WIDTH - LARGEUR_BOULE)
+				if (yGhost4 < yPowerUp)
 				{
 					yGhost4++;
 				}
-				else if (yGhost4 > 0)
+				else if (yGhost4 > yPowerUp)
 				{
 					yGhost4--;
 				}
-				else if (yGhost4 < xBoule && rand()%2 && xGhost4 < GLCD_WIDTH - LARGEUR_BOULE)
+				else if (xGhost4 < xPowerUp)
 				{
 					xGhost4++;
 				}
-				else if (xGhost4 > 0)
+				else if (xGhost4 > xPowerUp)
 				{
 					xGhost4--;
 				}
@@ -191,10 +191,10 @@ void TIM1_UP_TIM10_IRQHandler(void)
             isEated = true;
         }
 
-        if ((xGhost1 <= xBoule + LARGEUR_BOULE && xBoule <= xGhost1 + LARGEUR_BOULE && yGhost1 <= yBoule + HAUTEUR_BOULE && yBoule <= yGhost1 + HAUTEUR_BOULE) ||
-            (xGhost2 <= xBoule + LARGEUR_BOULE && xBoule <= xGhost2 + LARGEUR_BOULE && yGhost2 <= yBoule + HAUTEUR_BOULE && yBoule <= yGhost2 + HAUTEUR_BOULE) ||
-            (xGhost3 <= xBoule + LARGEUR_BOULE && xBoule <= xGhost3 + LARGEUR_BOULE && yGhost3 <= yBoule + HAUTEUR_BOULE && yBoule <= yGhost3 + HAUTEUR_BOULE) ||
-            (xGhost4 <= xBoule + LARGEUR_BOULE && xBoule <= xGhost4 + LARGEUR_BOULE && yGhost4 <= yBoule + HAUTEUR_BOULE && yBoule <= yGhost4 + HAUTEUR_BOULE))
+        if ((xGhost1 <= xPowerUp + LARGEUR_BOULE && xPowerUp <= xGhost1 + LARGEUR_BOULE && yGhost1 <= yPowerUp + HAUTEUR_BOULE && yPowerUp <= yGhost1 + HAUTEUR_BOULE) ||
+            (xGhost2 <= xPowerUp + LARGEUR_BOULE && xPowerUp <= xGhost2 + LARGEUR_BOULE && yGhost2 <= yPowerUp + HAUTEUR_BOULE && yPowerUp <= yGhost2 + HAUTEUR_BOULE) ||
+            (xGhost3 <= xPowerUp + LARGEUR_BOULE && xPowerUp <= xGhost3 + LARGEUR_BOULE && yGhost3 <= yPowerUp + HAUTEUR_BOULE && yPowerUp <= yGhost3 + HAUTEUR_BOULE) ||
+            (xGhost4 <= xPowerUp + LARGEUR_BOULE && xPowerUp <= xGhost4 + LARGEUR_BOULE && yGhost4 <= yPowerUp + HAUTEUR_BOULE && yPowerUp <= yGhost4 + HAUTEUR_BOULE))
         {
             isTheEnd = true;
         }
