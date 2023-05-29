@@ -153,12 +153,12 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				// gestion des touchés
         if (xPowerUp <= xBoule + LARGEUR_BOULE && xBoule <= xPowerUp + LARGEUR_BOULE && yPowerUp <= yBoule + HAUTEUR_BOULE && yBoule <= yPowerUp + HAUTEUR_BOULE)
         {
-					isEated = true;
+					isEatedByPM = true;
         }
 
         if (xGhost1 <= xPowerUp + LARGEUR_BOULE && xPowerUp <= xGhost1 + LARGEUR_BOULE && yGhost1 <= yPowerUp + HAUTEUR_BOULE && yPowerUp <= yGhost1 + HAUTEUR_BOULE)
         {
-           isEated = true;
+           isEatedByF = true;
         }
 				
 				if (visibleTime == -1)
