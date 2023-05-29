@@ -54,8 +54,8 @@ void TIM1_UP_TIM10_IRQHandler(void)
         joyRight = GPIOG->IDR & (1 << JOY_RIGHT);
 
         TIM1->SR &= ~UIF;
-        // Changement de direction en fonction de la direction du joystick
 
+			  // Gestion du temps pour move skin
         status += 1;
 
         if (status >= 20)
@@ -63,6 +63,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
             status = 0;
         }
 
+        // Changement de direction en fonction de la direction du joystick
         if (joyLeft == APPUYE)
         {
             direction = 'L';
@@ -110,6 +111,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
             }
         }
 
+				// gestion des touchés
         if (xPowerUp <= xBoule + LARGEUR_BOULE && xBoule <= xPowerUp + LARGEUR_BOULE && yPowerUp <= yBoule + HAUTEUR_BOULE && yBoule <= yPowerUp + HAUTEUR_BOULE)
         {
             isEated = true;
@@ -122,5 +124,78 @@ void TIM1_UP_TIM10_IRQHandler(void)
         {
             isTheEnd = true;
         }
+				
+				// modification des coordonnées des fantomes
+				// Move fantome 1
+				if (xGhost1 < xBoule)
+				{
+					xGhost1++;
+				}
+				else if (xBoule < xGhost1)
+				{
+					xGhost1--;
+				}
+				if (yGhost1 < yBoule)
+				{
+					yGhost1++;
+				}
+				else if (yBoule < yGhost1)
+				{
+					yGhost1--;
+				}
+				
+				// Move fantome 2
+				if (xGhost2 < xBoule)
+				{
+					xGhost2++;
+				}
+				else if (xBoule < xGhost2)
+				{
+					xGhost2--;
+				}
+				if (yGhost2 < yBoule)
+				{
+					yGhost2++;
+				}
+				else if (yBoule < yGhost2)
+				{
+					yGhost2--;
+				}
+				
+				// Move fantome 3
+				if (xGhost3 < xBoule)
+				{
+					xGhost3++;
+				}
+				else if (xBoule < xGhost3)
+				{
+					xGhost3--;
+				}
+				if (yGhost3 < yBoule)
+				{
+					yGhost3++;
+				}
+				else if (yBoule < yGhost3)
+				{
+					yGhost3--;
+				}
+				
+				// Move fantome 4
+				if (xGhost4 < xBoule)
+				{
+					xGhost4++;
+				}
+				else if (xBoule < xGhost4)
+				{
+					xGhost4--;
+				}
+				if (yGhost4 < yBoule)
+				{
+					yGhost4++;
+				}
+				else if (yBoule < yGhost4)
+				{
+					yGhost4--;
+				}
     }
 }
