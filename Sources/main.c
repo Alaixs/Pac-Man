@@ -34,7 +34,6 @@ Main program
 
 int main(void) {
     initializeGame();
-
     displayHomeScreen();
     while (1) {
         if (refreshMenu() == 1) {
