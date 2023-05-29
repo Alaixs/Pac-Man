@@ -62,7 +62,6 @@ void TIM1_UP_TIM10_IRQHandler(void)
         if (status >= 20)
         {
             status = 0;
-						rand();
 					  sensFantome = rand()%2;
         }
 
