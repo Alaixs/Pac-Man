@@ -127,74 +127,74 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				
 				// modification des coordonnées des fantomes
 				// Move fantome 1
-				if (xGhost1 < xBoule)
+				if (xGhost1 < xBoule || rand()%2)
 				{
 					xGhost1++;
 				}
-				else if (xBoule < xGhost1)
+				else if (xBoule < xGhost1 || rand()%2)
 				{
 					xGhost1--;
 				}
-				else if (yGhost1 < yBoule)
+				else if (yGhost1 < yBoule || rand()%2)
 				{
 					yGhost1++;
 				}
-				else if (yBoule < yGhost1)
+				else if (yBoule < yGhost1 || rand()%2)
 				{
 					yGhost1--;
 				}
 				
 				// Move fantome 2
-				if (yGhost2 < yBoule)
+				if (yGhost2 < yBoule || rand()%2)
 				{
 					yGhost2++;
 				}
-				else if (yBoule < yGhost2)
+				else if (yBoule < yGhost2 || rand()%2)
 				{
 					yGhost2--;
 				}
-				else if (xGhost2 < xBoule)
+				else if (xGhost2 < xBoule || rand()%2)
 				{
 					xGhost2++;
 				}
-				else if (xBoule < xGhost2)
+				else if (xBoule < xGhost2 || rand()%2)
 				{
 					xGhost2--;
 				}
 				
 				
 				// Move fantome 3
-				if (xGhost3 < xBoule)
+				if (xGhost3 < xBoule || rand()%2)
 				{
 					xGhost3++;
 				}
-				else if (xBoule < xGhost3)
+				else if (xBoule < xGhost3 || rand()%2)
 				{
 					xGhost3--;
 				}
-				else if (yGhost3 < yBoule)
+				else if (yGhost3 < yBoule || rand()%2)
 				{
 					yGhost3++;
 				}
-				else if (yBoule < yGhost3)
+				else if (yBoule < yGhost3 || rand()%2)
 				{
 					yGhost3--;
 				}
 				
 				// Move fantome 4
-				if (yGhost4 < yBoule)
+				if (yGhost4 < yBoule || rand()%2)
 				{
 					yGhost4++;
 				}
-				else if (yBoule < yGhost4)
+				else if (yBoule < yGhost4 || rand()%2)
 				{
 					yGhost4--;
 				}
-				else if (xGhost4 < xBoule)
+				else if (xGhost4 < xBoule || rand()%2)
 				{
 					xGhost4++;
 				}
-				else if (xBoule < xGhost4)
+				else if (xBoule < xGhost4 || rand()%2)
 				{
 					xGhost4--;
 				}
