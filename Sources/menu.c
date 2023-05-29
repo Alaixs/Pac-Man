@@ -40,27 +40,30 @@ void displayMenu(MenuSelected menuSelected)
 	}
 }
 
-int refreshMenu()
-{
-	static MenuSelected menuSelected = JOUER;
-	
-	if(joytickUpPressed() && menuSelected == QUITTER)
-	{
-		menuSelected = JOUER;
-		displayMenu(menuSelected);
-	}
-	if(joytickDownPressed()&& menuSelected == JOUER) 
-	{
-		menuSelected = QUITTER;
-		displayMenu(menuSelected);
-	}
-	
-	return userButtonPressed() && menuSelected==JOUER;
+int refreshMenu() {
+    static MenuSelected menuSelected = JOUER;
+
+    if (joytickUpPressed() && menuSelected == QUITTER) {
+        menuSelected = JOUER;
+        displayMenu(menuSelected);
+    }
+    if (joytickDownPressed() && menuSelected == JOUER) {
+        menuSelected = QUITTER;
+        displayMenu(menuSelected);
+    }
+
+    if (userButtonPressed() && menuSelected == JOUER) {
+        return 1;
+    }
+    else if (userButtonPressed() && menuSelected == QUITTER) {
+        return -1;
+    }
+    return 0;
 }
 
 
 void displayLogo()
-{
+{ 
 	GLCD_SetBackgroundColor(GLCD_COLOR_BLACK);
 	GLCD_SetForegroundColor(GLCD_COLOR_YELLOW);
 	GLCD_SetFont(&GLCD_Font_16x24);
@@ -74,7 +77,7 @@ void displayGameLosed()
     displayLogo();
     
     GLCD_SetForegroundColor(GLCD_COLOR_RED);
-    GLCD_DrawString  (20, 100,"Vous avez perdu");
+    GLCD_DrawString  (20, 100,"Perdu !");
     GLCD_SetForegroundColor(GLCD_COLOR_WHITE);
     sprintf(chaine,"Votre score : %d",points);
     GLCD_DrawString (20, 140, chaine);
