@@ -135,7 +135,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					xGhost1--;
 				}
-				if (yGhost1 < yBoule)
+				else if (yGhost1 < yBoule)
 				{
 					yGhost1++;
 				}
@@ -171,7 +171,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					xGhost3--;
 				}
-				if (yGhost3 < yBoule)
+				else if (yGhost3 < yBoule)
 				{
 					yGhost3++;
 				}
@@ -181,14 +181,6 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				}
 				
 				// Move fantome 4
-				if (xGhost4 < xBoule)
-				{
-					xGhost4++;
-				}
-				else if (xBoule < xGhost4)
-				{
-					xGhost4--;
-				}
 				if (yGhost4 < yBoule)
 				{
 					yGhost4++;
@@ -196,6 +188,14 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				else if (yBoule < yGhost4)
 				{
 					yGhost4--;
+				}
+				else if (xGhost4 < xBoule)
+				{
+					xGhost4++;
+				}
+				else if (xBoule < xGhost4)
+				{
+					xGhost4--;
 				}
     }
 }
