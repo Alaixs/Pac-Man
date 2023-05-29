@@ -166,7 +166,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				}
 				
 				// Move fantome 4
-				if (sensFantome)
+				if (!sensFantome)
 				{
 					if (yGhost4 > GLCD_HEIGHT - HAUTEUR_BOULE)
 						yGhost4+=rand()%2;
