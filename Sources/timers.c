@@ -145,14 +145,6 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				}
 				
 				// Move fantome 2
-				if (xGhost2 < xBoule)
-				{
-					xGhost2++;
-				}
-				else if (xBoule < xGhost2)
-				{
-					xGhost2--;
-				}
 				if (yGhost2 < yBoule)
 				{
 					yGhost2++;
@@ -161,6 +153,15 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					yGhost2--;
 				}
+				else if (xGhost2 < xBoule)
+				{
+					xGhost2++;
+				}
+				else if (xBoule < xGhost2)
+				{
+					xGhost2--;
+				}
+				
 				
 				// Move fantome 3
 				if (xGhost3 < xBoule)
