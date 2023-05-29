@@ -92,7 +92,7 @@ void displayGameFinished(void)
     displayLogo();
 
     GLCD_SetForegroundColor(GLCD_COLOR_YELLOW);
-    GLCD_DrawString  (20, 100,"Temps écoulé !");
+    GLCD_DrawString  (20, 100,"Temps ecoule !");
     GLCD_SetForegroundColor(GLCD_COLOR_WHITE);
     sprintf(chaine,"Votre score : %d",points);
     GLCD_DrawString (20, 140, chaine);
