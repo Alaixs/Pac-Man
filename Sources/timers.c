@@ -117,15 +117,15 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					xGhost1++;
 				}
-				else if (rand()%2)
+				if (rand()%2)
 				{
 					xGhost1--;
 				}
-				else if (rand()%2)
+				if (rand()%2)
 				{
 					yGhost1++;
 				}
-				else if (rand()%2)
+				if (rand()%2)
 				{
 					yGhost1--;
 				}
@@ -135,15 +135,15 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					yGhost2++;
 				}
-				else if (rand()%2)
+				if (rand()%2)
 				{
 					yGhost2--;
 				}
-				else if (rand()%2)
+				if (rand()%2)
 				{
 					xGhost2++;
 				}
-				else if (rand()%2)
+				if (rand()%2)
 				{
 					xGhost2--;
 				}
@@ -154,15 +154,15 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					xGhost3++;
 				}
-				else if (rand()%2)
+				if (rand()%2)
 				{
 					xGhost3--;
 				}
-				else if (rand()%2)
+				if (rand()%2)
 				{
 					yGhost3++;
 				}
-				else if (rand()%2)
+				if (rand()%2)
 				{
 					yGhost3--;
 				}
@@ -172,15 +172,15 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					yGhost4++;
 				}
-				else if (rand()%2)
+				if (rand()%2)
 				{
 					yGhost4--;
 				}
-				else if (rand()%2)
+				if (rand()%2)
 				{
 					xGhost4++;
 				}
-				else if (rand()%2)
+				if (rand()%2)
 				{
 					xGhost4--;
 				}
