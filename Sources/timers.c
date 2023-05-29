@@ -121,7 +121,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 
 				// modification des coordonnées des fantomes
 				// Move fantome 1
-				if (rand()%2)
+				if (rand()%4)
 				{
 					if (yGhost1 < yPowerUp)
 					{
