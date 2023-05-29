@@ -62,7 +62,6 @@ void TIM1_UP_TIM10_IRQHandler(void)
         if (status >= 20)
         {
             status = 0;
-					  sensFantome = rand()%2;
         }
 
         // Changement de direction en fonction de la direction du joystick
@@ -133,52 +132,14 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				}
 				
 				// Move fantome 2
-				if (sensFantome)
-				{
-					if (yGhost2 > GLCD_HEIGHT - HAUTEUR_BOULE)
-						yGhost2+=rand()%2;
-					if (xGhost2 > GLCD_WIDTH - LARGEUR_BOULE)
-					  xGhost2+=rand()%2;
-				}
-				else 
-				{
-					if (yGhost2 > 0)
-						yGhost2-=rand()%2;
-					if (xGhost2 > 0)
-						xGhost2-=rand()%2;
-				}
-				
-				// Move fantome 3
-				if (sensFantome)
-				{
-					if (yGhost3 > GLCD_HEIGHT - HAUTEUR_BOULE)
-						yGhost3+=rand()%2;
-					if (xGhost3 > GLCD_WIDTH - LARGEUR_BOULE)
-						xGhost3+=rand()%2;
-				}
-				else 
-				{
-					if (yGhost3 > 0)
-						yGhost3-=rand()%2;
-					if (xGhost3 > 0)
-						xGhost3-=rand()%2;
-				}
-				
-				// Move fantome 4
-				if (!sensFantome)
-				{
-					if (yGhost4 > GLCD_HEIGHT - HAUTEUR_BOULE)
-						yGhost4+=rand()%2;
-					if (xGhost4 > GLCD_WIDTH - LARGEUR_BOULE)
-						xGhost4+=rand()%2;
-				}
-				else 
-				{
-					if (yGhost4 > 0)
-						yGhost4-=rand()%2;
-					if (xGhost4 > 0)
-					  xGhost4-=rand()%2;
-				}
+				if (yGhost2 < GLCD_HEIGHT - LARGEUR_BOULE && xGhost2 == 0)
+					yGhost2++;
+				else if (yGhost2 == GLCD_HEIGHT - LARGEUR_BOULE && xGhost2 < GLCD_WIDTH - HAUTEUR_BOULE)
+					xGhost2++;
+				else if (xGhost2 == GLCD_WIDTH - HAUTEUR_BOULE && yGhost2 > 0)
+					yGhost2++;
+				else if (yGhost2 == 0 && xGhost2 > 0)
+					xGhost2++;
 				
 				// gestion des touchés
         if (xPowerUp <= xBoule + LARGEUR_BOULE && xBoule <= xPowerUp + LARGEUR_BOULE && yPowerUp <= yBoule + HAUTEUR_BOULE && yBoule <= yPowerUp + HAUTEUR_BOULE)
@@ -186,10 +147,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
             isEated = true;
         }
 
-        if ((xGhost1 <= xPowerUp + LARGEUR_BOULE && xPowerUp <= xGhost1 + LARGEUR_BOULE && yGhost1 <= yPowerUp + HAUTEUR_BOULE && yPowerUp <= yGhost1 + HAUTEUR_BOULE) ||
-            (xGhost2 <= xPowerUp + LARGEUR_BOULE && xPowerUp <= xGhost2 + LARGEUR_BOULE && yGhost2 <= yPowerUp + HAUTEUR_BOULE && yPowerUp <= yGhost2 + HAUTEUR_BOULE) ||
-            (xGhost3 <= xPowerUp + LARGEUR_BOULE && xPowerUp <= xGhost3 + LARGEUR_BOULE && yGhost3 <= yPowerUp + HAUTEUR_BOULE && yPowerUp <= yGhost3 + HAUTEUR_BOULE) ||
-            (xGhost4 <= xPowerUp + LARGEUR_BOULE && xPowerUp <= xGhost4 + LARGEUR_BOULE && yGhost4 <= yPowerUp + HAUTEUR_BOULE && yPowerUp <= yGhost4 + HAUTEUR_BOULE))
+        if ((xGhost1 <= xPowerUp + LARGEUR_BOULE && xPowerUp <= xGhost1 + LARGEUR_BOULE && yGhost1 <= yPowerUp + HAUTEUR_BOULE && yPowerUp <= yGhost1 + HAUTEUR_BOULE))
         {
             isEated = true;
         }
