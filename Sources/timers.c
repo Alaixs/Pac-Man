@@ -141,6 +141,27 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				else if (yGhost2 == 0 && xGhost2 > 0)
 					xGhost2--;
 				
+				// Move fantome 3
+				if (rand()%2)
+				{
+					if (yGhost3 < yBoule)
+					{
+						yGhost3++;
+					}
+					else if (yGhost3 > yBoule)
+					{
+						yGhost3--;
+					}
+					else if (xGhost3 < xBoule)
+					{
+						xGhost3++;
+					}
+					else if (xGhost3 > xBoule)
+					{
+						xGhost3--;
+					}
+				}
+				
 				// gestion des touchés
         if (xPowerUp <= xBoule + LARGEUR_BOULE && xBoule <= xPowerUp + LARGEUR_BOULE && yPowerUp <= yBoule + HAUTEUR_BOULE && yBoule <= yPowerUp + HAUTEUR_BOULE)
         {
