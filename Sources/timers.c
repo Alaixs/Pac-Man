@@ -124,7 +124,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					yGhost1++;
 				}
-				else if (yGhost1 > 0)
+				else if (rand()%2 && yGhost1 > 0)
 				{
 					yGhost1--;
 				}
@@ -132,7 +132,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					xGhost1++;
 				}
-				else if (xGhost1 > 0)
+				else if (rand()%2 && xGhost1 > 0)
 				{
 					xGhost1--;
 				}
@@ -142,7 +142,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					yGhost2++;
 				}
-				else if (yGhost2 > 0)
+				else if (rand()%2 && yGhost2 > 0)
 				{
 					yGhost2--;
 				}
@@ -150,7 +150,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					xGhost2++;
 				}
-				else if (xGhost2 > 0)
+				else if (rand()%2 && xGhost2 > 0)
 				{
 					xGhost2--;
 				}
@@ -160,7 +160,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					yGhost3++;
 				}
-				else if (yGhost3 > 0)
+				else if (rand()%2 && yGhost3 > 0)
 				{
 					yGhost3--;
 				}
@@ -168,7 +168,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					xGhost3++;
 				}
-				else if (xGhost3 > 0)
+				else if (rand()%2 && xGhost3 > 0)
 				{
 					xGhost3--;
 				}
@@ -178,7 +178,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					yGhost4++;
 				}
-				else if (yGhost4 > 0)
+				else if (rand()%2 && yGhost4 > 0)
 				{
 					yGhost4--;
 				}
@@ -186,7 +186,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					xGhost4++;
 				}
-				else if (xGhost4 > 0)
+				else if (rand()%2 && xGhost4 > 0)
 				{
 					xGhost4--;
 				}
