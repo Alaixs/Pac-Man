@@ -34,5 +34,7 @@ char direction;
 int status;
 int points;
 int isTheEnd;
+int visibleTime;
+int variableTime;
 
 #endif
