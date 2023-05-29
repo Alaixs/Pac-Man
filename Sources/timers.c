@@ -28,6 +28,7 @@ unsigned long joyLeft;
 char direction;
 int status;
 int sensFantome;
+int variableTime;
 
 /**
   * @brief  Configuration du timer1 pour générer des interruptions
@@ -58,7 +59,13 @@ void TIM1_UP_TIM10_IRQHandler(void)
 
 			  // Gestion du temps pour move skin
         status += 1;
-
+				variableTime += 1;
+				
+				if (variableTime == 1000)
+				{
+					variableTime = 0;
+					visibleTime--;
+				}
         if (status >= 20)
         {
             status = 0;
@@ -154,5 +161,9 @@ void TIM1_UP_TIM10_IRQHandler(void)
            isEated = true;
         }
 				
+				if (visibleTime == -1)
+				{
+					isTheEnd = true;
+				}
     }
 }
