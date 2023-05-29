@@ -134,37 +134,49 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				// Move fantome 2
 				if (rand()%2)
 				{
-					yGhost2+=rand()%2;
-					xGhost2+=rand()%2;
+					if (yGhost2 > GLCD_HEIGHT - HAUTEUR_BOULE)
+						yGhost2+=rand()%2;
+					if (xGhost2 > GLCD_WIDTH - LARGEUR_BOULE)
+					  xGhost2+=rand()%2;
 				}
 				else 
 				{
-					yGhost2-=rand()%2;
-					yGhost2-=rand()%2;
+					if (yGhost2 > 0)
+						yGhost2-=rand()%2;
+					if (xGhost2 > 0)
+						xGhost2-=rand()%2;
 				}
 				
 				// Move fantome 3
 				if (rand()%2)
 				{
-					yGhost3+=rand()%2;
-					xGhost3+=rand()%2;
+					if (yGhost3 > GLCD_HEIGHT - HAUTEUR_BOULE)
+						yGhost3+=rand()%2;
+					if (xGhost3 > GLCD_WIDTH - LARGEUR_BOULE)
+						xGhost3+=rand()%2;
 				}
 				else 
 				{
-					yGhost3-=rand()%2;
-					yGhost3-=rand()%2;
+					if (yGhost3 > 0)
+						yGhost3-=rand()%2;
+					if (xGhost3 > 0)
+						xGhost3-=rand()%2;
 				}
 				
 				// Move fantome 4
 				if (rand()%2)
 				{
-					yGhost4+=rand()%2;
-					xGhost4+=rand()%2;
+					if (yGhost4 > GLCD_HEIGHT - HAUTEUR_BOULE)
+						yGhost4+=rand()%2;
+					if (xGhost4 > GLCD_WIDTH - LARGEUR_BOULE)
+						xGhost4+=rand()%2;
 				}
 				else 
 				{
-					yGhost4-=rand()%2;
-					yGhost4-=rand()%2;
+					if (yGhost4 > 0)
+						yGhost4-=rand()%2;
+					if (xGhost4 > 0)
+					  xGhost4-=rand()%2;
 				}
 				
 				// gestion des touchés
