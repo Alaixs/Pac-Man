@@ -132,11 +132,11 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				}
 				
 				// Move fantome 2
-				if (yGhost2 < GLCD_HEIGHT - LARGEUR_BOULE && xGhost2 == 0)
+				if (yGhost2 < GLCD_WIDTH - LARGEUR_BOULE && xGhost2 == 0)
 					yGhost2++;
-				else if (yGhost2 == GLCD_HEIGHT - LARGEUR_BOULE && xGhost2 < GLCD_WIDTH - HAUTEUR_BOULE)
+				else if (yGhost2 == GLCD_WIDTH - LARGEUR_BOULE && xGhost2 < GLCD_HEIGHT - HAUTEUR_BOULE)
 					xGhost2++;
-				else if (xGhost2 == GLCD_WIDTH - HAUTEUR_BOULE && yGhost2 > 0)
+				else if (xGhost2 == GLCD_HEIGHT - HAUTEUR_BOULE && yGhost2 > 0)
 					yGhost2++;
 				else if (yGhost2 == 0 && xGhost2 > 0)
 					xGhost2++;
