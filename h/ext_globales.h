@@ -40,7 +40,8 @@ extern int isEatedByF;
 extern char direction;
 extern int status;
 extern int points;
-extern int isTheEnd;
+extern int isTheEndByF;
+extern int isTheEndByTime;
 extern int visibleTime;
 extern int variableTime;
 
