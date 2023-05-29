@@ -117,7 +117,10 @@ void updateGame(void) {
 
     sprintf(score, "%d", points);
     GLCD_DrawString(150, 0, score);
-		sprintf(timegame,"%d",visibleTime);
+		if (visibleTime >= 10)
+			sprintf(timegame,"%d",visibleTime);
+		else 
+			sprintf(timegame,"0%d",visibleTime);
 		GLCD_DrawString(0,0,timegame);
 
     // Dessiner les autres éléments du jeu (fantômes, bonus, etc.)
