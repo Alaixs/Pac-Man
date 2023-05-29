@@ -132,57 +132,39 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				}
 				
 				// Move fantome 2
-				if (yGhost2 < yPowerUp)
+				if (rand()%2)
 				{
-					yGhost2++;
+					yGhost2+=rand()%2;
+					xGhost2+=rand()%2;
 				}
-				else if (yGhost2 > yPowerUp)
+				else 
 				{
-					yGhost2--;
-				}
-				else if (xGhost2 < xPowerUp)
-				{
-					xGhost2++;
-				}
-				else if (xGhost2 > xPowerUp)
-				{
-					xGhost2--;
+					yGhost2-=rand()%2;
+					yGhost2-=rand()%2;
 				}
 				
 				// Move fantome 3
-				if (yGhost3 < yPowerUp)
+				if (rand()%2)
 				{
-					yGhost3++;
+					yGhost3+=rand()%2;
+					xGhost3+=rand()%2;
 				}
-				else if (yGhost3 > yPowerUp)
+				else 
 				{
-					yGhost3--;
-				}
-				else if (xGhost3 < xPowerUp)
-				{
-					xGhost3++;
-				}
-				else if (xGhost3 > xPowerUp)
-				{
-					xGhost3--;
+					yGhost3-=rand()%2;
+					yGhost3-=rand()%2;
 				}
 				
 				// Move fantome 4
-				if (yGhost4 < yPowerUp)
+				if (rand()%2)
 				{
-					yGhost4++;
+					yGhost4+=rand()%2;
+					xGhost4+=rand()%2;
 				}
-				else if (yGhost4 > yPowerUp)
+				else 
 				{
-					yGhost4--;
-				}
-				else if (xGhost4 < xPowerUp)
-				{
-					xGhost4++;
-				}
-				else if (xGhost4 > xPowerUp)
-				{
-					xGhost4--;
+					yGhost4-=rand()%2;
+					yGhost4-=rand()%2;
 				}
 				
 				// gestion des touchés
@@ -196,7 +178,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
             (xGhost3 <= xPowerUp + LARGEUR_BOULE && xPowerUp <= xGhost3 + LARGEUR_BOULE && yGhost3 <= yPowerUp + HAUTEUR_BOULE && yPowerUp <= yGhost3 + HAUTEUR_BOULE) ||
             (xGhost4 <= xPowerUp + LARGEUR_BOULE && xPowerUp <= xGhost4 + LARGEUR_BOULE && yGhost4 <= yPowerUp + HAUTEUR_BOULE && yPowerUp <= yGhost4 + HAUTEUR_BOULE))
         {
-            isEated = true;
+            isTheEnd = true;
         }
 				
     }
