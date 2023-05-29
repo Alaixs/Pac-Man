@@ -61,6 +61,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
         if (status >= 20)
         {
             status = 0;
+						rand();
         }
 
         // Changement de direction en fonction de la direction du joystick
