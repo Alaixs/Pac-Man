@@ -114,23 +114,25 @@ void TIM1_UP_TIM10_IRQHandler(void)
 
 				// modification des coordonnées des fantomes
 				// Move fantome 1
-				if (yGhost1 < yPowerUp)
+				if (rand()%2)
 				{
-					yGhost1++;
-				}
-				else if (yGhost1 > yPowerUp)
-				{
-					yGhost1--;
-				}
-				else if (xGhost1 < xPowerUp)
-				{
-					xGhost1++;
-				}
-				else if (xGhost1 > xPowerUp)
-				{
-					xGhost1--;
-				}
-				
+					if (yGhost1 < yPowerUp)
+					{
+						yGhost1++;
+					}
+					else if (yGhost1 > yPowerUp)
+					{
+						yGhost1--;
+					}
+					else if (xGhost1 < xPowerUp)
+					{
+						xGhost1++;
+					}
+					else if (xGhost1 > xPowerUp)
+					{
+						xGhost1--;
+					}
+			  }
 				// Move fantome 2
 				if (yGhost2 < GLCD_HEIGHT - LARGEUR_BOULE && xGhost2 == 0)
 					yGhost2++;
