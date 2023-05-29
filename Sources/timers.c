@@ -178,7 +178,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
             (xGhost3 <= xPowerUp + LARGEUR_BOULE && xPowerUp <= xGhost3 + LARGEUR_BOULE && yGhost3 <= yPowerUp + HAUTEUR_BOULE && yPowerUp <= yGhost3 + HAUTEUR_BOULE) ||
             (xGhost4 <= xPowerUp + LARGEUR_BOULE && xPowerUp <= xGhost4 + LARGEUR_BOULE && yGhost4 <= yPowerUp + HAUTEUR_BOULE && yPowerUp <= yGhost4 + HAUTEUR_BOULE))
         {
-            isTheEnd = true;
+            isEated = true;
         }
 				
     }
