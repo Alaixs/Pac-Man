@@ -158,12 +158,18 @@ void TIM1_UP_TIM10_IRQHandler(void)
 
         if (xGhost1 <= xPowerUp + LARGEUR_BOULE && xPowerUp <= xGhost1 + LARGEUR_BOULE && yGhost1 <= yPowerUp + HAUTEUR_BOULE && yPowerUp <= yGhost1 + HAUTEUR_BOULE)
         {
-           isEatedByF = true;
+          isEatedByF = true;
+        }
+				
+				if ((xGhost1 <= xBoule + LARGEUR_BOULE && xBoule <= xGhost1 + LARGEUR_BOULE && yGhost1 <= yBoule + HAUTEUR_BOULE && yBoule <= yGhost1 + HAUTEUR_BOULE) ||
+						(xGhost2 <= xBoule + LARGEUR_BOULE && xBoule <= xGhost2 + LARGEUR_BOULE && yGhost2 <= yBoule + HAUTEUR_BOULE && yBoule <= yGhost2 + HAUTEUR_BOULE))
+        {
+          isTheEndByF = true;
         }
 				
 				if (visibleTime == -1)
 				{
-					isTheEnd = true;
+					isTheEndByTime = true;
 				}
     }
 }
