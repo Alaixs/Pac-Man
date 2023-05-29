@@ -17,5 +17,6 @@ void displayMenu(MenuSelected menuSelected);
 void displayLogo(void);
 int refreshMenu(void);
 void displayGameLosed(void);
+void displayGameFinished(void);
 
 #endif
