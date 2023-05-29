@@ -49,7 +49,8 @@ int yPowerUp;
 int isEatedByPM = false;
 int isEatedByF = false;
 int points = 0;
-int isTheEnd = false;
+int isTheEndByF = false;
+int isTheEndByTime = false;
 int visibleTime = 60;
 
 /*----------------------------------------------------------------------------
