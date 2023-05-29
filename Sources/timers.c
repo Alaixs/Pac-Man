@@ -15,6 +15,7 @@
 #include "timers.h"
 #include "GPIO.h"
 #include <stdlib.h>
+#include <time.h>
 
 #define SETENA0 *(volatile unsigned long *)0xE000E100
 #define TIM1_UP_IRQChannel (1 << 25)
@@ -113,6 +114,9 @@ void TIM1_UP_TIM10_IRQHandler(void)
 
 				// modification des coordonnées des fantomes
 				// Move fantome 1
+				
+				srand(time(0));
+
 				if (rand()%2 && yGhost1 < GLCD_HEIGHT - LARGEUR_BOULE)
 				{
 					yGhost1++;
