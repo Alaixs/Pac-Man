@@ -40,5 +40,7 @@ extern char direction;
 extern int status;
 extern int points;
 extern int isTheEnd;
+extern int visibleTime;
+extern int variableTime;
 
 #endif
