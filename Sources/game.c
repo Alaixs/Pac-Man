@@ -49,12 +49,13 @@ int yPowerUp;
 int isEated = false;
 int points = 0;
 int isTheEnd = false;
-
+int visibleTime = 60;
 
 /*----------------------------------------------------------------------------
 Local variables
 ----------------------------------------------------------------------------*/
 char score[12];
+char timegame[2];
 
 
 void initializeGame(void) {
@@ -88,8 +89,6 @@ void configureTimer(void) {
 }
 
 void updateGame(void) {
-	
-	    char score[10];
     // Mettre à jour le jeu (affichage, déplacements, etc.)
     if (status <= 10) {
         switch(direction) {
@@ -116,6 +115,8 @@ void updateGame(void) {
 
     sprintf(score, "%d", points);
     GLCD_DrawString(150, 0, score);
+		sprintf(timegame,"%d",visibleTime);
+		GLCD_DrawString(0,0,timegame);
 
     // Dessiner les autres éléments du jeu (fantômes, bonus, etc.)
     GLCD_DrawBitmap(xGhost1, yGhost1, LARGEUR_BOULE, HAUTEUR_BOULE, (const unsigned char*)bmpfantomerougepng);
