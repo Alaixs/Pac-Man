@@ -27,6 +27,7 @@ unsigned long joyLeft;
 
 char direction;
 int status;
+int sensFantome;
 
 /**
   * @brief  Configuration du timer1 pour générer des interruptions
@@ -62,6 +63,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
         {
             status = 0;
 						rand();
+					  sensFantome = rand()%2;
         }
 
         // Changement de direction en fonction de la direction du joystick
@@ -132,7 +134,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				}
 				
 				// Move fantome 2
-				if (rand()%2)
+				if (sensFantome)
 				{
 					if (yGhost2 > GLCD_HEIGHT - HAUTEUR_BOULE)
 						yGhost2+=rand()%2;
@@ -148,7 +150,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				}
 				
 				// Move fantome 3
-				if (rand()%2)
+				if (sensFantome)
 				{
 					if (yGhost3 > GLCD_HEIGHT - HAUTEUR_BOULE)
 						yGhost3+=rand()%2;
@@ -164,7 +166,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				}
 				
 				// Move fantome 4
-				if (rand()%2)
+				if (sensFantome)
 				{
 					if (yGhost4 > GLCD_HEIGHT - HAUTEUR_BOULE)
 						yGhost4+=rand()%2;
