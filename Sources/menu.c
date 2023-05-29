@@ -40,7 +40,7 @@ void displayMenu(MenuSelected menuSelected)
 	}
 }
 
-int refreshMenu() {
+int refreshMenu(void) {
     static MenuSelected menuSelected = JOUER;
 
     if (joytickUpPressed() && menuSelected == QUITTER) {
@@ -62,7 +62,7 @@ int refreshMenu() {
 }
 
 
-void displayLogo()
+void displayLogo(void)
 { 
 	GLCD_SetBackgroundColor(GLCD_COLOR_BLACK);
 	GLCD_SetForegroundColor(GLCD_COLOR_YELLOW);
@@ -70,7 +70,7 @@ void displayLogo()
 	GLCD_DrawString  (90, 5,"PAC-MAN");
 }
 
-void displayGameLosed()
+void displayGameLosed(void)
 {
     char chaine[20];
     clearScreenGLCD();

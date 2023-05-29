@@ -6,10 +6,10 @@
 #include <stdbool.h> 
 
 
-void initializeGame();
-void displayHomeScreen();
-void configureTimer();
-void updateGame();
-void displayGameOver();
+void initializeGame(void);
+void displayHomeScreen(void);
+void configureTimer(void);
+void updateGame(void);
+void displayGameOver(void);
 
 #endif  // GAME_H

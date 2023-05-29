@@ -57,7 +57,7 @@ Local variables
 char score[12];
 
 
-void initializeGame() {
+void initializeGame(void) {
     Enable_GPIO(); // Activer les ports GPIO
     Init_GPIO(); // Initialiser les ports GPIO
 	
@@ -78,16 +78,16 @@ void initializeGame() {
 
 }
 
-void displayHomeScreen() {
+void displayHomeScreen(void) {
     initGLCD();  // Initialiser l'écran LCD
     displayMenu(JOUER);  // Afficher le menu principal
 }
 
-void configureTimer() {
+void configureTimer(void) {
     cfgTimer1();  // Configurer et démarrer le timer
 }
 
-void updateGame() {
+void updateGame(void) {
 	
 	    char score[10];
     // Mettre à jour le jeu (affichage, déplacements, etc.)
@@ -135,7 +135,7 @@ void updateGame() {
     GLCD_DrawBitmap(xPowerUp, yPowerUp, LARGEUR_BOULE, HAUTEUR_BOULE, (const unsigned char*)bmpPowerUp);
 }
 
-void displayGameOver() {
+void displayGameOver(void) {
 	
     displayGameLosed();
 }
