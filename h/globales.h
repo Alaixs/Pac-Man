@@ -29,7 +29,8 @@ int yGhost4;
 
 int xPowerUp;
 int yPowerUp;
-int isEated;
+int isEatedByPM;
+int isEatedByF;
 char direction;
 int status;
 int points;
