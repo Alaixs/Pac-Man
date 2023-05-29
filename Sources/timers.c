@@ -113,7 +113,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 
 				// modification des coordonnées des fantomes
 				// Move fantome 1
-				if (rand()%2 && yGhost1 < GLCD_HEIGHT + LARGEUR_BOULE)
+				if (rand()%2 && yGhost1 < GLCD_HEIGHT - LARGEUR_BOULE)
 				{
 					yGhost1++;
 				}
@@ -121,7 +121,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					yGhost1--;
 				}
-				if (rand()%2 && xGhost1 < GLCD_WIDTH + LARGEUR_BOULE)
+				if (rand()%2 && xGhost1 < GLCD_WIDTH - LARGEUR_BOULE)
 				{
 					xGhost1++;
 				}
@@ -131,7 +131,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				}
 				
 				// Move fantome 2
-				if (rand()%2 && yGhost2 < GLCD_HEIGHT + LARGEUR_BOULE)
+				if (rand()%2 && yGhost2 < GLCD_HEIGHT - LARGEUR_BOULE)
 				{
 					yGhost2++;
 				}
@@ -139,7 +139,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					yGhost2--;
 				}
-				if (rand()%2 && xGhost2 < GLCD_WIDTH + LARGEUR_BOULE)
+				if (rand()%2 && xGhost2 < GLCD_WIDTH - LARGEUR_BOULE)
 				{
 					xGhost2++;
 				}
@@ -149,7 +149,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				}
 				
 				// Move fantome 3
-				if (rand()%2 && yGhost3 < GLCD_HEIGHT + LARGEUR_BOULE)
+				if (rand()%2 && yGhost3 < GLCD_HEIGHT - LARGEUR_BOULE)
 				{
 					yGhost3++;
 				}
@@ -157,7 +157,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					yGhost3--;
 				}
-				if (rand()%2 && xGhost3 < GLCD_WIDTH + LARGEUR_BOULE)
+				if (rand()%2 && xGhost3 < GLCD_WIDTH - LARGEUR_BOULE)
 				{
 					xGhost3++;
 				}
@@ -167,7 +167,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				}
 				
 				// Move fantome 4
-				if (rand()%2 && yGhost4 < GLCD_HEIGHT + LARGEUR_BOULE)
+				if (rand()%2 && yGhost4 < GLCD_HEIGHT - LARGEUR_BOULE)
 				{
 					yGhost4++;
 				}
@@ -175,7 +175,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					yGhost4--;
 				}
-				if (rand()%2 && xGhost4 < GLCD_WIDTH + LARGEUR_BOULE)
+				if (rand()%2 && xGhost4 < GLCD_WIDTH - LARGEUR_BOULE)
 				{
 					xGhost4++;
 				}
