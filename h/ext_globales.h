@@ -35,7 +35,8 @@ extern int yGhost4;
 
 extern int xPowerUp;
 extern int yPowerUp;
-extern int isEated;
+extern int isEatedByPM;
+extern int isEatedByF;
 extern char direction;
 extern int status;
 extern int points;
