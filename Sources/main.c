@@ -41,12 +41,13 @@ int main(void) {
 					  clearScreenGLCD();
             configureTimer();
         
-            while (!isTheEnd) {
+            while (!isTheEndByF && !isTheEndByTime) {
                 updateGame();
             }
-
-            displayGameOver();
-
+						if (isTheEndByF)
+							displayGameLosed();
+						else if (isTheEndByTime)
+							displayGameFinished();
             break;
         }
         else if (refreshMenu() == -1) {
