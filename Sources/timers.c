@@ -113,74 +113,73 @@ void TIM1_UP_TIM10_IRQHandler(void)
 
 				// modification des coordonnées des fantomes
 				// Move fantome 1
-				if (rand()%2)
-				{
-					xGhost1++;
-				}
-				if (rand()%2)
-				{
-					xGhost1--;
-				}
-				if (rand()%2)
+				if (rand()%2 && yGhost1 < GLCD_HEIGHT + LARGEUR_BOULE)
 				{
 					yGhost1++;
 				}
-				if (rand()%2)
+				if (rand()%2 && yGhost1 > 0)
 				{
 					yGhost1--;
 				}
+				if (rand()%2 && xGhost1 < GLCD_WIDTH + LARGEUR_BOULE)
+				{
+					xGhost1++;
+				}
+				if (rand()%2 && xGhost1 > 0)
+				{
+					xGhost1--;
+				}
 				
 				// Move fantome 2
-				if (rand()%2)
+				if (rand()%2 && yGhost2 < GLCD_HEIGHT + LARGEUR_BOULE)
 				{
 					yGhost2++;
 				}
-				if (rand()%2)
+				if (rand()%2 && yGhost2 > 0)
 				{
 					yGhost2--;
 				}
-				if (rand()%2)
+				if (rand()%2 && xGhost2 < GLCD_WIDTH + LARGEUR_BOULE)
 				{
 					xGhost2++;
 				}
-				if (rand()%2)
+				if (rand()%2 && xGhost2 > 0)
 				{
 					xGhost2--;
 				}
 				
-				
 				// Move fantome 3
-				if (rand()%2)
-				{
-					xGhost3++;
-				}
-				if (rand()%2)
-				{
-					xGhost3--;
-				}
-				if (rand()%2)
+				if (rand()%2 && yGhost3 < GLCD_HEIGHT + LARGEUR_BOULE)
 				{
 					yGhost3++;
 				}
-				if (rand()%2)
+				if (rand()%2 && yGhost3 > 0)
 				{
 					yGhost3--;
 				}
+				if (rand()%2 && xGhost3 < GLCD_WIDTH + LARGEUR_BOULE)
+				{
+					xGhost3++;
+				}
+				if (rand()%2 && xGhost3 > 0)
+				{
+					xGhost3--;
+				}
 				
 				// Move fantome 4
-				if (rand()%2)
+				if (rand()%2 && yGhost4 < GLCD_HEIGHT + LARGEUR_BOULE)
 				{
 					yGhost4++;
 				}
-				if (rand()%2)
+				if (rand()%2 && yGhost4 > 0)
 				{
 					yGhost4--;
 				}
-				if (rand()%2)
+				if (rand()%2 && xGhost4 < GLCD_WIDTH + LARGEUR_BOULE)
 				{
 					xGhost4++;
 				}
-				if (rand()%2)
+				if (rand()%2 && xGhost4 > 0)
 				{
 					xGhost4--;
 				}
