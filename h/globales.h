@@ -34,7 +34,8 @@ int isEatedByF;
 char direction;
 int status;
 int points;
-int isTheEnd;
+int isTheEndByF;
+int isTheEndByTime;
 int visibleTime;
 int variableTime;
 
