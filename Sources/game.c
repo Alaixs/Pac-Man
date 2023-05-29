@@ -67,11 +67,11 @@ void initializeGame(void) {
     xGhost2 = GLCD_WIDTH - LARGEUR_BOULE;
     yGhost2 = 0;
     
-    xGhost3 = GLCD_WIDTH - LARGEUR_BOULE;
-    yGhost3 = GLCD_HEIGHT - HAUTEUR_BOULE;
+    //xGhost3 = GLCD_WIDTH - LARGEUR_BOULE;
+    //yGhost3 = GLCD_HEIGHT - HAUTEUR_BOULE;
     
-    xGhost4 = 0;
-    yGhost4 = GLCD_HEIGHT - HAUTEUR_BOULE;
+    //xGhost4 = 0;
+    //yGhost4 = GLCD_HEIGHT - HAUTEUR_BOULE;
 	
 	  xPowerUp = rand()%(GLCD_WIDTH-LARGEUR_BOULE);
     yPowerUp = rand()%(GLCD_HEIGHT-HAUTEUR_BOULE);
@@ -120,8 +120,8 @@ void updateGame(void) {
     // Dessiner les autres éléments du jeu (fantômes, bonus, etc.)
     GLCD_DrawBitmap(xGhost1, yGhost1, LARGEUR_BOULE, HAUTEUR_BOULE, (const unsigned char*)bmpfantomerougepng);
     GLCD_DrawBitmap(xGhost2, yGhost2, LARGEUR_BOULE, HAUTEUR_BOULE, (const unsigned char*)bmpfantomerosepng);
-    GLCD_DrawBitmap(xGhost3, yGhost3, LARGEUR_BOULE, HAUTEUR_BOULE, (const unsigned char*)bmpfantomebleupng);
-    GLCD_DrawBitmap(xGhost4, yGhost4, LARGEUR_BOULE, HAUTEUR_BOULE, (const unsigned char*)bmpfantomeorangepng);
+    //GLCD_DrawBitmap(xGhost3, yGhost3, LARGEUR_BOULE, HAUTEUR_BOULE, (const unsigned char*)bmpfantomebleupng);
+    //GLCD_DrawBitmap(xGhost4, yGhost4, LARGEUR_BOULE, HAUTEUR_BOULE, (const unsigned char*)bmpfantomeorangepng);
 
     if (isEated) {
         GLCD_DrawBitmap(xPowerUp, yPowerUp, LARGEUR_BOULE, HAUTEUR_BOULE, (const unsigned char*)bmpErase);
