@@ -61,7 +61,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
         status += 1;
 				variableTime += 1;
 				
-				if (variableTime == 1000)
+				if (variableTime == 83)
 				{
 					variableTime = 0;
 					visibleTime--;
