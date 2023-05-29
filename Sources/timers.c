@@ -111,20 +111,6 @@ void TIM1_UP_TIM10_IRQHandler(void)
             }
         }
 
-				// gestion des touchés
-        if (xPowerUp <= xBoule + LARGEUR_BOULE && xBoule <= xPowerUp + LARGEUR_BOULE && yPowerUp <= yBoule + HAUTEUR_BOULE && yBoule <= yPowerUp + HAUTEUR_BOULE)
-        {
-            isEated = true;
-        }
-
-        if ((xGhost1 <= xBoule + LARGEUR_BOULE && xBoule <= xGhost1 + LARGEUR_BOULE && yGhost1 <= yBoule + HAUTEUR_BOULE && yBoule <= yGhost1 + HAUTEUR_BOULE) ||
-            (xGhost2 <= xBoule + LARGEUR_BOULE && xBoule <= xGhost2 + LARGEUR_BOULE && yGhost2 <= yBoule + HAUTEUR_BOULE && yBoule <= yGhost2 + HAUTEUR_BOULE) ||
-            (xGhost3 <= xBoule + LARGEUR_BOULE && xBoule <= xGhost3 + LARGEUR_BOULE && yGhost3 <= yBoule + HAUTEUR_BOULE && yBoule <= yGhost3 + HAUTEUR_BOULE) ||
-            (xGhost4 <= xBoule + LARGEUR_BOULE && xBoule <= xGhost4 + LARGEUR_BOULE && yGhost4 <= yBoule + HAUTEUR_BOULE && yBoule <= yGhost4 + HAUTEUR_BOULE))
-        {
-            isTheEnd = true;
-        }
-				
 				// modification des coordonnées des fantomes
 				// Move fantome 1
 				if (rand()%2)
@@ -135,7 +121,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					xGhost1--;
 				}
-				if (rand()%2)
+				else if (rand()%2)
 				{
 					yGhost1++;
 				}
@@ -153,7 +139,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					yGhost2--;
 				}
-				if (rand()%2)
+				else if (rand()%2)
 				{
 					xGhost2++;
 				}
@@ -172,7 +158,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					xGhost3--;
 				}
-				if (rand()%2)
+				else if (rand()%2)
 				{
 					yGhost3++;
 				}
@@ -190,7 +176,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					yGhost4--;
 				}
-				if (rand()%2)
+				else if (rand()%2)
 				{
 					xGhost4++;
 				}
@@ -198,5 +184,20 @@ void TIM1_UP_TIM10_IRQHandler(void)
 				{
 					xGhost4--;
 				}
+				
+				// gestion des touchés
+        if (xPowerUp <= xBoule + LARGEUR_BOULE && xBoule <= xPowerUp + LARGEUR_BOULE && yPowerUp <= yBoule + HAUTEUR_BOULE && yBoule <= yPowerUp + HAUTEUR_BOULE)
+        {
+            isEated = true;
+        }
+
+        if ((xGhost1 <= xBoule + LARGEUR_BOULE && xBoule <= xGhost1 + LARGEUR_BOULE && yGhost1 <= yBoule + HAUTEUR_BOULE && yBoule <= yGhost1 + HAUTEUR_BOULE) ||
+            (xGhost2 <= xBoule + LARGEUR_BOULE && xBoule <= xGhost2 + LARGEUR_BOULE && yGhost2 <= yBoule + HAUTEUR_BOULE && yBoule <= yGhost2 + HAUTEUR_BOULE) ||
+            (xGhost3 <= xBoule + LARGEUR_BOULE && xBoule <= xGhost3 + LARGEUR_BOULE && yGhost3 <= yBoule + HAUTEUR_BOULE && yBoule <= yGhost3 + HAUTEUR_BOULE) ||
+            (xGhost4 <= xBoule + LARGEUR_BOULE && xBoule <= xGhost4 + LARGEUR_BOULE && yGhost4 <= yBoule + HAUTEUR_BOULE && yBoule <= yGhost4 + HAUTEUR_BOULE))
+        {
+            isTheEnd = true;
+        }
+				
     }
 }
