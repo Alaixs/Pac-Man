@@ -39,7 +39,7 @@ void cfgTimer1(void)
 {
     RCC->APB2ENR |= (1 << 11);
     TIM1->PSC = 450;
-    TIM1->ARR = 2000;
+    TIM1->ARR = 2000; // maj toutes les 5.36 µs
     TIM1->DIER |= UIE;
     TIM1->CR1 |= 0x0001;
     SETENA0 |= TIM1_UP_IRQChannel;
